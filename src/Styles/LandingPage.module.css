@@ -1,0 +1,116 @@
+.fbox{
+    height:400px;
+    width:85%;
+    border:1px solid red;
+    margin: auto;
+}
+.fimg{
+    height:100%;
+    width:100%;
+    border-radius: 15px;
+}
+.btn{
+    height: 30px;
+    width: 85%;
+    border: 1px solid red;
+    margin: auto;
+    margin-top: 5px;
+}
+.fbox2{
+    height:240px;
+    width:85%;
+    border:1px solid red;
+    margin: auto;
+}
+.fimg2{
+    height:100%;
+    width:100%;
+    border-radius: 15px;
+}
+.best{
+    color:#475D4B;
+    font-size:22px;
+}
+.luxury{
+    height: 240px;
+    width: 90%;
+    border: 1px solid black;
+    margin: auto;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: auto;
+    gap: 15px;
+    
+}
+.lux{
+    height: 230px;
+    width: 230px;
+    border: 1px solid red;
+    border-radius: 5px;
+    /* margin-left: 5px; */
+  margin-top: 5px;
+
+}
+.lux:hover{
+    cursor: pointer;
+}
+.luximg{
+    border-radius: 5px;
+}
+.find{
+    height: 220px;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+}
+.findbox{
+    height: 216px;
+    width: 216px;
+    border: 1px solid red;
+}
+.spot{
+    height: 231px;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+}
+.spotbox{
+    height: 234px;
+    width: 216px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+.spotimg{
+    border-radius: 5px;
+}
+.btnfind{
+    height: 30px;
+    width: 85%;
+    border: 1px solid red;
+    margin: auto;
+    margin-top: 5px;
+}
+.btnlux{
+    height: 30px;
+    width: 85%;
+    border: 1px solid red;
+    margin: auto;
+    margin-top: 5px;
+}
+.media{
+    height: 149px;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: auto;
+}
+.mediabox{
+    height: 149px;
+    width: 170px;
+    border: 1px solid red;
+}
