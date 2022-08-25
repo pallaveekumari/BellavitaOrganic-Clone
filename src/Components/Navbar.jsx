@@ -1,16 +1,13 @@
-import { Box,Flex } from '@chakra-ui/react'
+import { Box,Flex,Heading } from '@chakra-ui/react'
 import React from 'react'
+import style from "../Styles/Navbar.module.css"
 import {
     Menu,
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
     Button,
-    Portal
+   
   
   } from '@chakra-ui/react'
 
@@ -22,13 +19,13 @@ const Navbar = () => {
   return (
     <div>
       <Box style={{height:"40px",width:"100%",border:"1px solid #4444",color:"#475D4B",fontStyle:"Segoe UI",background:"#e4efda",display:"flex",justifyContent:"center",gap:"20px"}}>
-            <h1 style={{fontSize:"15px"}}>Flexi Box - Buy any 4 products RS499</h1>
+            <Heading style={{fontSize:"15px",marginTop:"10px"}}>Flexi Box - Buy any 4 products RS499</Heading>
             <button style={{background:"#475D4B",color:"white",borderRadius:"5px",width:"110px",height:"30px",marginTop:"5px",border:"none"}}>Shop Now</button>
       </Box>
-      <Box style={{height:"70px",width:"87%",border:"1px solid red",display:"flex",margin:"auto",justifyContent:"space-between"}}>
-           <button>
-            <img src="" alt="" />
-           </button>
+      <Box style={{height:"70px",width:"87%",border:"1px solid red",display:"flex",justifyContent:"space-between",margin:"auto"}}>
+           <Box className={style.loginlogo}>
+           <i class="fa-solid fa-user-plus"></i>
+           </Box>
            <Box style={{display:"flex",justifyContent:"space-evenly",height:"70px",width:"230px"}}>
            <img style={{height:"60px",width:"60px"}}
            src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVO_220_x_220_480x.png?v=1653304683" alt="icon" />
@@ -37,55 +34,109 @@ const Navbar = () => {
            <img style={{height:"60px",width:"60px"}}
            src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVL_220_x_220_480x.png?v=1653304721" alt="icon2" />
            </Box>
-           <Box >
-           <input style={{fontStyle:"Segoe UI",width:"250px",height:"40px",borderRadius:"10px",border:"1px solid #4444"}} type="text" placeholder='Search for Products'/>
+           <Box className={style.navbox}>
+              <Box>
+            <input style={{fontStyle:"Segoe UI",width:"300px",height:"40px",borderRadius:"10px",border:"1px solid #4444",marginTop:"15px"}} type="text" placeholder='Search for Products'/>
+            </Box>
+            <Box className={style.searchlogo}>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </Box>
+            <Box className={style.searchlogo}>
+            <i class="fa-solid fa-heart"></i>
+            </Box>
+            <Box className={style.searchlogo}>
+            
+            <i class="fa-solid fa-bag-shopping"></i>
+            </Box>
            </Box>
-           <Box>
-            <i class="fa-solid fa-user-plus"></i>
-           </Box>
-           <Box>
-            <img src="" alt="" />
-           </Box>
+          
+          
       </Box>
       <Box style={{height:"30px",width:"87%",margin:"auto",borderBottom:"1px solid #4444"}}>
         <Box style={{height:"40px",width:"80%",margin:"auto",_hover:{cursor:"pointer"}}}>
-        <Box style={{display:"flex",justifyContent:"space-evenly",fontSize:"13px",color:"#475D4B" }}>
-            <Box>SHOP ALL</Box>
-             <Box>NEW ARRIVALS</Box>
-             <Box>BESTSELLERS</Box>
-             
-             <Menu>
-  <MenuButton as={Button}>
-    {/* Actions */}
-    <Box>SKIN CARE</Box>
-  </MenuButton>
-  <Box display="flex" border="1px solid black">
+                <Box style={{display:"flex",justifyContent:"space-evenly",fontSize:"15px",color:"#475D4B" }}>
+                    <Box>SHOP ALL</Box>
+                    <Box>NEW ARRIVALS</Box>
+                    <Box>BESTSELLERS</Box>
+                    <Menu isLazy>
+  <MenuButton>SKIN CARE</MenuButton>
   <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
-  </MenuList>
- 
-  <MenuList>
-    <MenuItem>Download</MenuItem>
-    <MenuItem>Create a Copy</MenuItem>
-    <MenuItem>Mark as Draft</MenuItem>
-    <MenuItem>Delete</MenuItem>
-    <MenuItem>Attend a Workshop</MenuItem>
-  </MenuList>
-  </Box>
+    {/* MenuItems are not rendered unless Menu is open */}
+    <p className={style.bath}>BY PRODUCT TYPE</p>
+    <MenuItem>ALL SKINCARE PRODUCTS</MenuItem>
+    <MenuItem>FACE CREAM</MenuItem>
+    <MenuItem>FACE SERUM</MenuItem>
+    <MenuItem>FACE TONER</MenuItem>
+    <MenuItem>FACE GEL</MenuItem>
+    <MenuItem>FACE MOISTURISERS</MenuItem>
+      <img className={style.img} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/products/C-GlowFaceSerum-01_1_765x.jpg?v=1651698248" alt="" />
+      </MenuList>
 </Menu>
-             <Box>BODY CARE</Box>
-             <Box>HAIR CARE</Box>
-             <Box>PERFUMES</Box>
-             <Box>COMBO</Box>
-             <Box>BUILD A BOX</Box>
-        </Box>
+                    
+      <Menu isLazy >
+  <MenuButton>BODY CARE</MenuButton>
+  <MenuList className={style.menu}>
+   
+    <p className={style.bath}>BATH BODY</p>
+    <MenuItem>ALL BODY CARE PRODUCTS</MenuItem>
+    <MenuItem>BODY SOAPS</MenuItem>
+    <MenuItem>BODY WASH</MenuItem>
+    <MenuItem>BODY SCRUB</MenuItem>
+    <MenuItem>BODY LOTION</MenuItem>
+    <img className={style.img} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Body_Care_Megamenu.png?v=1651666035" alt="" />
+  </MenuList>
+</Menu>
+<Menu isLazy>
+  <MenuButton>HAIR CARE</MenuButton>
+  <MenuList>
+    {/* MenuItems are not rendered unless Menu is open */}
+    <p className={style.bath}>BY PRODUCT TYPE</p>
+    <MenuItem>ALL HAIRCARE PRODUCTS</MenuItem>
+    <MenuItem>SHAMPOO</MenuItem>
+    <MenuItem>CONDITIONER</MenuItem>
+    <MenuItem>HAIR OIL</MenuItem>
+    <MenuItem>HAIR MASK</MenuItem>
+    <MenuItem>HAIR LOSS</MenuItem>
+      <img className={style.img} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Hair_Care_Medium_9f61e8b2-fbfd-4dde-b6f2-4c265b70be8a.jpg?v=1659103665" alt="" />
+      </MenuList>
+</Menu>
+<Menu isLazy>
+  <MenuButton>PERFUMES</MenuButton>
+  <MenuList>
+    {/* MenuItems are not rendered unless Menu is open */}
+    
+    <MenuItem>ALL PERFUMES</MenuItem>
+    <MenuItem>PERFUMES FOR HER</MenuItem>
+    <MenuItem>PERFUMES FOR HIM</MenuItem>
+    <MenuItem>UNISEX PERFUMES</MenuItem>
+    <MenuItem>BODY PERFUM</MenuItem>
+    <MenuItem>LITTLE LUXURY</MenuItem>
+      <img className={style.img} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Perfumes_Medium_c0c80af3-da25-4c9f-8e7f-c00c84f76a51.jpg?v=1659103815" alt="" />
+      </MenuList>
+</Menu>
+<Menu isLazy>
+  <MenuButton>COMBOS</MenuButton>
+  <MenuList>
+    {/* MenuItems are not rendered unless Menu is open */}
+    
+    <MenuItem>GIFT BOXES</MenuItem>
+    <MenuItem>ALL COMBOS</MenuItem>
+    <MenuItem>BESTSELLER COMBOS</MenuItem>
+    <MenuItem>SKIN COMBOS</MenuItem>
+    <MenuItem>HAIR COMBOS</MenuItem>
+    <MenuItem>PERFUME COMBOS</MenuItem>
+    <MenuItem>C GLOW RANGE</MenuItem>
+    <MenuItem>KUMKUMADI RANGE</MenuItem>
+     
+      </MenuList>
+</Menu>
+                    <Box>BUILD A BOX</Box>
+                </Box>
         </Box>
      
       </Box>
+
+
 
 
 

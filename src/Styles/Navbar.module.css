@@ -1,0 +1,40 @@
+.loginlogo{
+    height: 24px;
+    width: 24px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.loginlogo:hover{
+    cursor: pointer;
+}
+.searchlogo{
+    height: 24px;
+    width: 24px; 
+    border: 0.5px solid black;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.navbox{
+    display: flex;
+    gap: 10px;
+
+}
+.navbox:hover{
+    cursor: pointer;
+}
+.bath{
+    font-size: 25px;
+    border-bottom: 1px solid #475D4B;
+}
+.menu{
+    background-color: #e4efda;
+    
+}
+.img{
+    height: 150px;
+    width: 150px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    /* margin-left: 30px; */
+}

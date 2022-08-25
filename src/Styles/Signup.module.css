@@ -1,17 +1,16 @@
-.email{
+.fname{
     height: 50px;
     width: 450px;
     border: 1px solid #475D4B;
     margin: auto;
-    margin-top: 45px;
+    margin-top: 40px;
     color: #475D4B;
-    /* padding: 0 0 0 10px; */
 }
-.email:hover{
+.fname:hover{
    
     border: 2px solid #475D4B;
 }
-.pass{
+.lname{
     height: 50px;
     width: 450px;
     border: 1px solid #475D4B;
@@ -19,12 +18,14 @@
     margin-top: 20px;
     color: #475D4B;
 }
-.pass:hover{
-    
+.lname:hover{
+   
     border: 2px solid #475D4B;
 }
-.forget{
-   margin-right: 300px;
+.name{
+    height: 100%;
+    width: 100%;
+   
 }
 .signbtn{
     height: 45px;
@@ -35,9 +36,4 @@
     background-color:#475D4B;
     color: white; 
     
-}
-.name{
-    height: 100%;
-    width: 100%;
-   
 }
