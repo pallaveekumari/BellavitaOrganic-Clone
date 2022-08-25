@@ -5,15 +5,17 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Login from './Route/Login';
 import LandingPage from './Route/LandingPage';
+import Signup from './Route/Signup';
 
 function App() {
   return (
     <div className="App">
      {/* <AllRoutes/> */}
-     {/* <Navbar/> */}
+     <Navbar/>
      {/* <Footer/> */}
-     <Login/>
+     {/* <Login/> */}
      {/* <LandingPage/> */}
+     {/* <Signup/> */}
     </div>
   );
 }
