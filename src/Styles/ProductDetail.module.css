@@ -1,0 +1,51 @@
+.topimg{
+    height: 28px;
+    width: 100px;
+    border: 1px solid green;
+    margin-bottom: 10px;
+}
+.box{
+    width: 250px;
+    height:500px; 
+   
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    
+}
+.top{
+    height: 100%;
+    width: 100%;
+}
+
+.title{
+    font-size: 16px;
+    font-weight: bold;
+   
+}
+.category{
+    font-size: 17px;
+    color: #475D4B;
+    margin-top: 10px;
+}
+.boxes{
+    display: flex;
+    height: 30px;
+    width: 230px;
+    border: 1px solid red;
+    justify-content: space-around;
+    font-size: 15px;
+    font-weight: bold;
+    color: #475D4B;
+    margin-top: 10px;
+}
+.addbtn{
+    height: 40px;
+    width: 200px;
+    border: 1px solid red;
+    color: white;
+    font-weight: bold;
+    background-color: #475D4B;
+    border-radius: 5px;
+    /* margin-top: 10px; */
+}
+

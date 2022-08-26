@@ -2,6 +2,7 @@
     height:400px;
     width:85%;
     border:1px solid red;
+    display: flex;
     margin: auto;
 }
 .fimg{
@@ -114,4 +115,30 @@
     width: 170px;
     border: 1px solid red;
     
+    
+}
+
+
+
+.checkingslide{
+    height:"400px";
+    width:"90%";
+    background-repeat:no-repeat;
+    background-size:cover;
+    /* border: 1px solid red; */
+}
+
+.checkingslide > img{
+    width: 100%;
+    height: 100%;
+}
+
+.items{
+    height: 510;
+    /* width:307px; */
+    width: auto;
+    /* border: 1px solid black; */
+    display: flex;
+    gap: 20px;
+    /* margin: auto; */
 }

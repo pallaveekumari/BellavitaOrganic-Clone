@@ -6,16 +6,20 @@ import Footer from './Components/Footer';
 import Login from './Route/Login';
 import LandingPage from './Route/LandingPage';
 import Signup from './Route/Signup';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import ProductPage from './Route/ProductPage';
 
 function App() {
   return (
     <div className="App">
-     {/* <AllRoutes/> */}
-     <Navbar/>
+     <AllRoutes/>
+     {/* <Navbar/> */}
      {/* <Footer/> */}
      {/* <Login/> */}
      {/* <LandingPage/> */}
      {/* <Signup/> */}
+     {/* <ProductPage/> */}
     </div>
   );
 }
