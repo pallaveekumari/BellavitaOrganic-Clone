@@ -40,3 +40,9 @@
 *body{
   font-family: 'Segoe UI', Tahoma,Verdana, sans-serif;
 }
+
+.each-slide{
+  width: auto;
+  background-size: auto;
+  height: 400px;
+}

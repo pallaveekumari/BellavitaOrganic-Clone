@@ -1,12 +1,104 @@
-import React from 'react'
+// import React from 'react'
 import style from "../Styles/LandingPage.module.css"
 import { Box ,Heading,Image} from '@chakra-ui/react'
+import { homepage } from '../Utils/data'
+import Productcard from '../Components/Productcard'
+import Navbar from '../Components/Navbar'
+import { Slide,Fade } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
+import React, { Component } from "react";
+import Slider from "react-slick";
+
 const LandingPage = () => {
+
+    // const slideImages = [
+    //     {
+    //       url: 'https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Skin_Care_V1_Medium_717c8f68-9b82-4c7c-9ff2-0e886f52103d_480x.jpg?v=1659102928',
+          
+    //     },
+    //     {
+    //       url: 'https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Body_Care_V2_Medium_860c536d-b4a1-4a37-b3f3-4d1c4e1f004d_480x.jpg?v=1659102928',
+       
+    //     },
+    //     {
+    //       url: 'https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Hair_Care_V1.1_Medium_a2d75bd0-3b18-4c34-92cf-04d4c74e2bcb_480x.jpg?v=1659102927',
+         
+    //     },
+    //   ];
+
+
+// console.log(homepage)
+
+// export default class SimpleSlider extends Component {
+//     render() {
+//       const settings = {
+//         dots: true,
+//         infinite: true,
+//         speed: 500,
+//         slidesToShow: 1,
+//         slidesToScroll: 1
+//       };
   return (
     <div>
+        <Navbar/>
+        {/* <div>
+        <h2> Single Item</h2>
+        <Slider {...settings}>
+          <div>
+            <h3>1</h3>
+          </div>
+          <div>
+            <h3>2</h3>
+          </div>
+          <div>
+            <h3>3</h3>
+          </div>
+          <div>
+            <h3>4</h3>
+          </div>
+          <div>
+            <h3>5</h3>
+          </div>
+          <div>
+            <h3>6</h3>
+          </div>
+        </Slider>
+      </div> */}
+    
+      
+
+
+        {/* <div className="slide-container">
+        <Slide>
+         {slideImages.map((slideImage, index)=> (
+            <div className="each-slide" key={index}>
+              <div className={style.checkingslide} style={{"backgroundImage": `url(${slideImage.url})`}}>
+              <span>caption</span>
+              </div>
+            </div>
+          ))} 
+        </Slide>
+      </div> */}
+
+{/* <div className="slide-container">
+      <Fade>
+        {slideImages.map((fadeImage, index) => (
+          <div className="each-fade" key={index}>
+            <div className="image-container">
+              <img src={fadeImage.url} />
+            </div>
+            <h2>check</h2>
+          </div>
+        ))}
+      </Fade>
+    </div> */}
 
         <Box className={style.fbox}>
             <img className={style.fimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/1200x399_4bbe001a-978e-491b-a1a4-1fff50c9d9b9_1200x.jpg?v=1660116668" alt="" />
+             <img className={style.fimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVO_X_Bevzilla_desktop_1200x.jpg?v=1659342303" alt="" />
+            <img className={style.fimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Hydra_Website_banner_1200x399_4f0cfee4-00b0-42bd-9ac5-55d8a235e0ad_1200x.png?v=1658296941" alt="" />
+        
+        
         </Box>
       <Box className={style.btn}></Box>
       <Box className={style.fbox2}>
@@ -15,6 +107,23 @@ const LandingPage = () => {
       <Heading className={style.best}>BESTSELLERS</Heading>
 
 
+    <div className={style.items}>
+     {
+        homepage.map((el)=>{
+            return <Productcard
+            // key={el.id}
+            // topimg={el.topimg}
+            // image={el.image}
+            // title={el.title}
+            // category={el.category}
+            // price={el.price}
+            // strikeprice={el.strikeprice}
+            // id={el.id}
+            el={el}
+            />
+        })
+     }
+</div>
 
       <Heading fontSize="22px" color="#475D4B" mb="10px">IN THE SPOTLIGHT</Heading>
 
@@ -187,5 +296,8 @@ const LandingPage = () => {
     </div>
   )
 }
+// }
+// }
+export default LandingPage;
 
-export default LandingPage
+

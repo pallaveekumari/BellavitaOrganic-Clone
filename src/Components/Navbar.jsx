@@ -1,30 +1,65 @@
-import { Box,Flex,Heading } from '@chakra-ui/react'
-import React from 'react'
+import { Box,Flex,Heading,Text ,Link} from '@chakra-ui/react'
+import React, { useContext } from 'react'
 import style from "../Styles/Navbar.module.css"
+
 import {
     Menu,
     MenuButton,
     MenuList,
     MenuItem,
     Button,
+    Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure
    
   
   } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
+import { AppContext } from '../Context/AppContext'
 
 
 
 
 
 const Navbar = () => {
+
+
+
+  const OverlayOne = () => (
+    <ModalOverlay
+      bg='blackAlpha.300'
+      backdropFilter='blur(10px) hue-rotate(90deg)'
+    />
+  )
+  const OverlayTwo =()=>(
+    <ModalOverlay
+      bg='none'
+      backdropFilter='auto'
+      backdropInvert='80%'
+      backdropBlur='2px'
+    />
+  )
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [overlay, setOverlay] = React.useState(<OverlayOne />)
+
+const navigate=useNavigate()
+const {cartdata,handleDeleteData,handleDecqty,qty,handleqty} =useContext(AppContext)
+
   return (
     <div>
       <Box style={{height:"40px",width:"100%",border:"1px solid #4444",color:"#475D4B",fontStyle:"Segoe UI",background:"#e4efda",display:"flex",justifyContent:"center",gap:"20px"}}>
             <Heading style={{fontSize:"15px",marginTop:"10px"}}>Flexi Box - Buy any 4 products RS499</Heading>
             <button style={{background:"#475D4B",color:"white",borderRadius:"5px",width:"110px",height:"30px",marginTop:"5px",border:"none"}}>Shop Now</button>
       </Box>
-      <Box style={{height:"70px",width:"87%",border:"1px solid red",display:"flex",justifyContent:"space-between",margin:"auto"}}>
+      <Box style={{height:"70px",width:"85%",border:"1px solid red",display:"flex",justifyContent:"space-between",margin:"auto"}}>
            <Box className={style.loginlogo}>
-           <i class="fa-solid fa-user-plus"></i>
+           <i className="fa-solid fa-user-plus"></i>
            </Box>
            <Box style={{display:"flex",justifyContent:"space-evenly",height:"70px",width:"230px"}}>
            <img style={{height:"60px",width:"60px"}}
@@ -39,14 +74,80 @@ const Navbar = () => {
             <input style={{fontStyle:"Segoe UI",width:"300px",height:"40px",borderRadius:"10px",border:"1px solid #4444",marginTop:"15px"}} type="text" placeholder='Search for Products'/>
             </Box>
             <Box className={style.searchlogo}>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
             </Box>
             <Box className={style.searchlogo}>
-            <i class="fa-solid fa-heart"></i>
+            <i className="fa-solid fa-heart"></i>
             </Box>
             <Box className={style.searchlogo}>
             
-            <i class="fa-solid fa-bag-shopping"></i>
+        <Button
+        ml='4'
+        onClick={() => {
+          setOverlay(<OverlayTwo />)
+          onOpen()
+        }}
+      >
+        <i className="fa-solid fa-bag-shopping"></i>
+      </Button>
+      <Modal isCentered isOpen={isOpen} onClose={onClose}>
+        {overlay}
+        <ModalContent>
+          <Button>
+            <Link>Continue Shopping</Link>
+          </Button>
+          <ModalHeader>Your Cart</ModalHeader>
+          
+          {/* <ModalCloseButton /> */}
+          <ModalBody>
+            {/* <Text>Custom backdrop filters!</Text> */}
+
+           {cartdata.length > 0 ? (
+               cartdata.map((el)=>{
+                return(
+
+                  <Box className={style.container}>
+                  <Box className={style.mainbox}>
+                     <Box className={style.cimg}>
+                      <img className={style.cbox} src={el.image} alt="" />
+                    </Box>
+                    <Text>{el.title}</Text>
+                    <Box className={style.cprice}>
+                      <Text>{el.price}</Text>
+                      <Text>{el.strikeprice}</Text>
+                    </Box>
+                    <Box className={style.cbutton}>
+                      <Button onClick={handleDecqty}>-</Button>
+                      <Text>{qty}</Text>
+                      <Button onClick={handleqty}>+</Button>
+                      <Button onClick={()=>handleDeleteData(el.id)}>
+                      <i className="fa-solid fa-trash-can"></i>
+                      </Button>
+                    </Box>
+                   
+                  </Box>
+                  </Box>
+                )
+               })
+           ) : 
+           <Box>
+            <h1>Your Cart Is Empty!</h1>
+            </Box>
+            }
+          </ModalBody>
+          <ModalFooter>
+            <Button>CHECKOUT</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+  
+
+
+
+
+
+
+
             </Box>
            </Box>
           
