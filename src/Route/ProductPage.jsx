@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Navbar from "../Components/Navbar"
 import style from "../Styles/ProductPage.module.css"
 import {Box} from "@chakra-ui/react"
@@ -10,25 +10,28 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
   Popover,
   PopoverTrigger,
   PopoverContent,
-  PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
   Button,
-  Portal
+ 
 } from '@chakra-ui/react'
+import { AppContext } from '../Context/AppContext'
 const ProductPage = ()=> {
 
   const [data,setData]=useState(productpage)
+
+  const [text,setText] =useState("")
+
+  
+  const {handlesearch,getProductdata,productdata}=useContext(AppContext)
+
+
+  useEffect(()=>{
+    getProductdata(productdata)
+  })
 
 const handlesort=(type)=>{
   if(type==="LTH")
@@ -108,6 +111,8 @@ const handlesorttitle=(type)=>{
   }
 }
 
+console.log(text)
+
   return (
     <div>
       <Navbar/>
@@ -140,8 +145,16 @@ const handlesorttitle=(type)=>{
     
       <PopoverBody>
         {/* <Button colorScheme='blue'>Button</Button> */}
-        <input type="text" placeholder='search your products'/>
-        <Button>Go</Button>
+        <input
+         value={text}
+          onChange={(e)=>setText(e.target.value)}
+           type="text" placeholder='search your products'/>
+        
+        <Button
+        onClick={()=>{
+          handlesearch(text)
+          alert("Go Below For Results")
+          }}>Go</Button>
       </PopoverBody>
      
     </PopoverContent>
@@ -210,17 +223,8 @@ const handlesorttitle=(type)=>{
           
             
                  {
-                  data.map((el)=>{
+                  productdata.map((el)=>{
                     return <ProductDetails
-                    //  key={el.id}
-                    // topimg={el.topimg}
-                    // image={el.image}
-                    // title={el.title}
-                    // category={el.category}
-                    // price={el.price}
-                    // strikeprice={el.strikeprice}
-                    // rating={el.rating}
-                    // id={el.id}
                     el={el}
                     />
                   })
