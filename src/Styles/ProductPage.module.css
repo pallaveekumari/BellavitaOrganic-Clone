@@ -91,3 +91,11 @@
 .search{
     display: flex;
 }
+
+
+@media all and (max-width:683px)
+{
+    .logos{
+        display: flex;
+    }
+}

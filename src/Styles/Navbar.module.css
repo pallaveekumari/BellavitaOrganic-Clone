@@ -66,3 +66,6 @@ margin-bottom: 20px;
     margin-top: 90px;
   
 }
+.hamburger{
+    display: none;
+}

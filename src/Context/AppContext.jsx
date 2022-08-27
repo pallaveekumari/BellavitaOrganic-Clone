@@ -1,5 +1,5 @@
- import React, { createContext, useState } from 'react'
-
+ import React, { createContext, useEffect, useState } from 'react'
+import axios from "axios"
 export const AppContext=createContext()
 const AppContextProvider = ({children}) => {
 
@@ -12,6 +12,16 @@ const [userData,setuserData]=useState([])
 const [cartdata,setcartdata]=useState([])
 
 const [qty,setqty]=useState(1)
+
+const [productdata,setproductdata]=useState([])
+const [total, setTotal] = useState(0);
+const handleTotal = (arr) => {
+  let updatedTotal =  arr.reduce((sum, el) => {
+     return sum + el.price;
+   }, 0);
+   setTotal(updatedTotal)
+ };
+
 const handleAddsign=(signupdata)=>{
    setsignup([...signup,signupdata])
 }
@@ -34,7 +44,7 @@ setcartdata([...cartdata,data])
 
 const handleDeleteData=(id)=>{
   let updated=cartdata.filter((el)=>{
-    return el.id != id;
+    return el.id !== id;
   });
   setcartdata(updated)
 };
@@ -48,10 +58,23 @@ const handleDecqty=()=>{
   setqty(qty-1)
 }
 
+const handlesearch=(query)=>{
+  axios.get(`https://bellavita-organic.herokuapp.com/productpage?q=${query}`)
+  .then(res=>setproductdata(res.data))
+}
+
+const getProductdata=()=>{
+  axios.get(`https://bellavita-organic.herokuapp.com/productpage`)
+  .then(res=>setproductdata(res.data))
+}
+
+
+
   return (
     <AppContext.Provider
      value=
-     {{handleAddsign,
+     {{
+      handleAddsign,
      signup,
      handleUserData,
      handlelogin,
@@ -62,7 +85,13 @@ const handleDecqty=()=>{
      setqty,
      qty,
      handleqty,
-     handleDecqty
+     handleDecqty,
+     handlesearch,
+     productdata,
+     getProductdata,
+     handleTotal,
+     total
+    
 
      }}
      >
