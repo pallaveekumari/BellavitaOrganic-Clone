@@ -14,11 +14,11 @@ import { AppContext } from '../Context/AppContext'
         </div>
         <div className={style.best}>
         <img src={el.image} alt="" />
-        </div>el.
+        </div>
         <h1 className={style.title}>{el.title}</h1>
         <p className={style.category}>{el.category}</p>
         <div className={style.boxes}>
-        <h2>{el.price}</h2>
+        <h2>RS: {el.price}</h2>
         <Text as="s">{el.strikeprice}</Text>
         </div>
        <button onClick={()=>

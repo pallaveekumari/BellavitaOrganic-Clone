@@ -16,9 +16,10 @@ import {Text} from "@chakra-ui/react"
         <h1 className={style.title}>{el.title}</h1>
         <p className={style.category}>{el.category}</p>
         <div className={style.boxes}>
-        <h2>{el.price}</h2>
+        <h2>RS: {el.price}</h2>
         <Text as="s">{el.strikeprice}</Text>
         <h2>{el.rating}</h2>
+        <i style={{marginTop:"5px",marginLeft:"-25px"}}className="fa-solid fa-star"></i>
         </div>
        <button  onClick={()=>{
         handleAddToCart(el)

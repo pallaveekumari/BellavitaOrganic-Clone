@@ -7,25 +7,29 @@ import Navbar from '../Components/Navbar'
 import 'react-slideshow-image/dist/styles.css'
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { render } from "@testing-library/react"
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { render } from "@testing-library/react";
+import { Fade } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
+
+import Footer from "../Components/Footer"
 
 const LandingPage = () => {
 
 
     
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      };
+    
+
+    const fadeImages = [
+        "https://cdn.shopify.com/s/files/1/0054/6665/2718/files/1200x399_4bbe001a-978e-491b-a1a4-1fff50c9d9b9_1200x.jpg?v=1660116668",
+        "https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVO_X_Bevzilla_desktop_1200x.jpg?v=1659342303",
+        "https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Hydra_Website_banner_1200x399_4f0cfee4-00b0-42bd-9ac5-55d8a235e0ad_1200x.png?v=1658296941"
+    ]
   
             return (
                 <div>
-                    <Navbar />
+                    <Navbar/>
                  
 
                     <Box className={style.logos}>
@@ -58,42 +62,14 @@ const LandingPage = () => {
 
                   
 
-                    <Box className={style.fbox}>
-                    {/* <img className={style.fimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/1200x399_4bbe001a-978e-491b-a1a4-1fff50c9d9b9_1200x.jpg?v=1660116668" alt="" />
-                    <img className={style.fimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVO_X_Bevzilla_desktop_1200x.jpg?v=1659342303" alt="" />
-                    <img className={style.fimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Hydra_Website_banner_1200x399_4f0cfee4-00b0-42bd-9ac5-55d8a235e0ad_1200x.png?v=1658296941" alt="" /> */}
-                    <div>
-             
-                <Slider {...settings}>
-                <div>
-                <h3>1</h3>
-                {/* <img className={style.fimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/1200x399_4bbe001a-978e-491b-a1a4-1fff50c9d9b9_1200x.jpg?v=1660116668" alt="" /> */}
-                </div>
-                <div>
-                <h3>2</h3>
-                {/* <img className={style.fimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVO_X_Bevzilla_desktop_1200x.jpg?v=1659342303" alt="" /> */}
-                </div>
-                <div>
-                <h3>3</h3>
-                {/* <img className={style.fimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Hydra_Website_banner_1200x399_4f0cfee4-00b0-42bd-9ac5-55d8a235e0ad_1200x.png?v=1658296941" alt="" /> */}
-                </div>
-                <div>
-                    <h3>4</h3>
-                </div>
-                <div>
-                    <h3>5</h3>
-                </div>
-                <div>
-                    <h3>6</h3>
-                </div>
-                </Slider>
-              </div>
-                       
-                  
-                       
+                <Box className={style.fbox}>
+                   
+                <Box className={style.fimg}>
+                    <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/1200x399_4bbe001a-978e-491b-a1a4-1fff50c9d9b9_1200x.jpg?v=1660116668" alt="" />
+                </Box>
+                   
 
-
-                    </Box>
+                </Box>
                     <Box className={style.btn}>
                     
                     </Box>
@@ -262,25 +238,25 @@ const LandingPage = () => {
                     </Box>
 
 
-                    <Box style={{ height: "30px", width: "90%", border: "1px solid red", margin: "auto" }}></Box>
+                    <Box style={{ height: "30px", width: "90%", margin: "auto" }}></Box>
 
                     <Box className={style.bella} >
                         <Image className={style.bellaimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Bella-Cash-Section-Desktop-v1_1200x.jpg?v=1660051412" alt="" />
 
                     </Box>
                     <Box className={style.our} >
-                        <Box style={{ height: "80px", width: "100%", border: "1px solid red", background: "#475D4B", marginTop: "200px" }}>
-                            <Box style={{ height: "80px", width: "500px", border: "1px solid red", color: "white", marginLeft: "650px", fontSize: "20px", fontFamily: "Segoe UI" }}>
+                        <Box style={{ height: "80px", width: "100%", background: "#475D4B", marginTop: "200px" }}>
+                            <Box className={style.down} style={{ height: "80px", width: "500px", border: "1px solid red", color: "white", marginLeft: "650px", fontSize: "20px", fontFamily: "Segoe UI" }}>
                                 <Heading style={{ marginTop: "15px" }}>DOWNLOAD OUR APP</Heading>
                             </Box>
 
-                            <Image mt="-240px" ml="200px" src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Download_our_App_Section_Image_V_460x460.png?v=1650369432" alt="" />
+                            <Image className={style.mobile} mt="-240px" ml="200px" src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Download_our_App_Section_Image_V_460x460.png?v=1650369432" alt="" />
 
                             <Box display="flex" gap="25px">
-                                <Box height="68px" width="178px" border="1px solid red" mt="-185px" ml="700px">
+                                <Box height="68px" width="178px"  mt="-185px" ml="700px">
                                     <Image src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/playstore_460x460_efa998ac-e0d8_460x460.png?v=1650369394" alt="" />
                                 </Box>
-                                <Box height="68px" width="178px" border="1px solid red" mt="-185px">
+                                <Box height="68px" width="178px" mt="-185px">
                                     <Image src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/app-store-card_460x460_35fc55d1_460x460.png?v=1650369409" alt="" />
                                 </Box>
                             </Box>
@@ -288,7 +264,7 @@ const LandingPage = () => {
                     </Box>
 
 
-
+                  <Footer/>
                 </div>
             )
         }

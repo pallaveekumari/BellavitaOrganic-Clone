@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react'
 import style from "../Styles/Login.module.css"
-import {Heading,Box,Link} from "@chakra-ui/react"
-import { useNavigate } from 'react-router-dom'
+import {Heading,Box} from "@chakra-ui/react"
+import { useNavigate,Link } from 'react-router-dom'
 import { AppContext } from '../Context/AppContext'
+import Footer from '../Components/Footer'
+import Navbar from '../Components/Navbar'
 
 const init={
   email:"",
@@ -50,7 +52,7 @@ const Login = () => {
   }
   return (
     <div>
-      
+      <Navbar/>
    <Heading fontWeight="medium">Login</Heading>
    <Box className={style.email}>
     <input className={style.name} name="email" type="email" placeholder='Email' onChange={handleChange}/>
@@ -59,14 +61,16 @@ const Login = () => {
         <input className={style.name} name="password" type="password" placeholder='Password' onChange={handleChange}/>
     </Box>
     <Box>
-    <Link className={style.forget}>Forget your password?</Link>
+    <button className={style.forget}>Forget your password?</button>
     </Box>
     <Box >
     <button  onClick={handlelogin} className={style.signbtn}>Sign in</button>
     </Box>
     <Box>
-        <Link className={style.account}>Create account</Link>
+       
+       <Link to= "/signup" ><button className={style.account}>Create account</button></Link> 
     </Box>
+    <Footer/>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 .topimg{
     height: 28px;
     width: 100px;
-    border: 1px solid green;
+    
     margin-bottom: 10px;
 }
 .box{
@@ -34,7 +34,7 @@
     display: flex;
     height: 30px;
     width: 150px;
-    border: 1px solid red;
+   
     justify-content: space-around;
     font-size: 15px;
     font-weight: bold;
@@ -44,7 +44,7 @@
 .addbtn{
     height: 40px;
     width: 300px;
-    border: 1px solid red;
+  
     color: white;
     font-weight: bold;
     background-color: #475D4B;

@@ -1,5 +1,6 @@
-import { Box, Flex, Heading, Text, Link } from '@chakra-ui/react'
-import React, { useContext } from 'react'
+import { Box, Flex, Heading, Text } from '@chakra-ui/react'
+import React, { useContext, useEffect, useState } from 'react';
+import {Link} from "react-router-dom";
 import style from "../Styles/Navbar.module.css"
 // import Link from "react-router-dom"
 import {
@@ -47,12 +48,14 @@ const Navbar = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [overlay, setOverlay] = React.useState(<OverlayOne />)
-  
+  const [text,setText] =useState("")
 
   const navigate = useNavigate()
-  const { cartdata, handleDeleteData, handleDecqty, qty, handleqty ,handleTotal } = useContext(AppContext)
+  const {handlesearch, cartdata, handleDeleteData, handleqty ,handleTotal,total} = useContext(AppContext)
 
-
+useEffect(()=>{
+handleTotal()
+})
   
 
 
@@ -62,7 +65,7 @@ const Navbar = () => {
         <Heading style={{ fontSize: "15px", marginTop: "10px" }}>Flexi Box - Buy any 4 products RS499</Heading>
         <button style={{ background: "#475D4B", color: "white", borderRadius: "5px", width: "110px", height: "30px", marginTop: "5px", border: "none" }}>Shop Now</button>
       </Box>
-      <Box style={{ height: "70px", width: "85%", border: "1px solid red", display: "flex", justifyContent: "space-between", margin: "auto" }}>
+      <Box style={{ height: "70px", width: "85%", display: "flex", justifyContent: "space-between", margin: "auto" }}>
         
         
         <Box className={style.loginlogo}>
@@ -70,8 +73,8 @@ const Navbar = () => {
           <i className="fa-solid fa-user-plus"></i>
           </Link>
         </Box>
-       
-        <Box style={{ display: "flex", justifyContent: "space-evenly", height: "70px", width: "230px" }}>
+       <Link to="/">
+        <Box className={style.navicon} style={{ display: "flex", justifyContent: "space-evenly", height: "70px", width: "230px" }}>
           <img style={{ height: "60px", width: "60px" }}
             src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVO_220_x_220_480x.png?v=1653304683" alt="icon" />
           <img style={{ height: "60px", width: "60px" }}
@@ -79,19 +82,29 @@ const Navbar = () => {
           <img style={{ height: "60px", width: "60px" }}
             src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVL_220_x_220_480x.png?v=1653304721" alt="icon2" />
         </Box>
+        </Link>
         <Box className={style.navbox}>
           <Box>
-            <input style={{ fontStyle: "Segoe UI", width: "300px", height: "40px", borderRadius: "10px", border: "1px solid #4444", marginTop: "15px" }} type="text" placeholder='Search for Products' />
+            <input  value={text}
+          onChange={(e)=>setText(e.target.value)}
+           type="text"style={{ fontStyle: "Segoe UI", width: "300px", height: "40px", borderRadius: "10px", border: "1px solid #4444", marginTop: "15px" }} placeholder='Search for Products' />
           </Box>
           <Box className={style.searchlogo}>
+            <button onClick={()=>{
+          handlesearch(text)
+          alert("Go Below For Results")
+          }}>
             <i className="fa-solid fa-magnifying-glass"></i>
+            </button>
           </Box>
           <Box className={style.searchlogo}>
             <i className="fa-solid fa-heart"></i>
           </Box>
-          <Box className={style.searchlogo}>
 
-            <Button
+
+          <Box>
+
+            <Button className={style.bagbtn}
               ml='4'
               onClick={() => {
                 setOverlay(<OverlayTwo />)
@@ -104,7 +117,7 @@ const Navbar = () => {
               {overlay}
               <ModalContent>
                 <Button>
-                  <Link>Continue Shopping</Link>
+                  <Link to="/product" ><button>Continue Shopping</button></Link>
                 </Button>
                 <ModalHeader>Your Cart</ModalHeader>
 
@@ -122,32 +135,38 @@ const Navbar = () => {
                               <img className={style.cbox} src={el.image} alt="" />
                             </Box>
                             <Text>{el.title}</Text>
-                            <Box className={style.cprice}>
-                              <Text>{el.price}</Text>
-                              <Text as="s">{el.strikeprice}</Text>
                             </Box>
+                            <Box className={style.cprice}>
+
+                              <Text>RS: {el.price*el.qty}</Text>
+
+                              <Text as="s">{el.strikeprice}</Text>
+                           
                             <Box className={style.cbutton}>
-                              <Button onClick={handleDecqty}>-</Button>
-                              <Text>{qty}</Text>
-                              <Button onClick={handleqty}>+</Button>
-                              <Button onClick={() => handleDeleteData(el.id)}>
+
+                              <Button disabled={el.qty===1} onClick={()=>handleqty(el.id,-1)}>-</Button>
+                              <Text>{el.qty}</Text>
+                              <Button onClick={()=>handleqty(el.id,1)}>+</Button>
+
+                              <Button className={style.del}  onClick={() => handleDeleteData(el.id)}>
                                 <i className="fa-solid fa-trash-can"></i>
                               </Button>
+                              </Box>
                             </Box>
 
-                          </Box>
+                         
                          
                         </Box>
                       )
                     })
                   ) :
                     <Box>
-                      <h1>Your Cart Is Empty!</h1>
+                      <h1>Your Cart Is Empty! Please Add Products For Shopping</h1>
                     </Box>
                   }
                 </ModalBody>
                 <ModalFooter>
-                <Box>Total:{handleTotal}</Box>
+                <Box>Total:{total}</Box>
                   <Button>CHECKOUT</Button>
                 </ModalFooter>
               </ModalContent>
@@ -168,11 +187,12 @@ const Navbar = () => {
       <Box style={{ height: "30px", width: "87%", margin: "auto", borderBottom: "1px solid #4444" }}>
         <Box style={{ height: "40px", width: "80%", margin: "auto", _hover: { cursor: "pointer" } }}>
           <Box style={{ display: "flex", justifyContent: "space-evenly", fontSize: "15px", color: "#475D4B" }}>
-            <Box>SHOP ALL</Box>
-            <Box>NEW ARRIVALS</Box>
-            <Box>BESTSELLERS</Box>
+            <Box className={style.build}>SHOP ALL</Box>
+           
+           <Link to="/product" ><Box className={style.build}>NEW ARRIVALS</Box></Link> 
+            <Box className={style.build}>BESTSELLERS</Box>
             <Menu isLazy>
-              <MenuButton>SKIN CARE</MenuButton>
+              <MenuButton className={style.body}>SKIN CARE</MenuButton>
               <MenuList>
                 {/* MenuItems are not rendered unless Menu is open */}
                 <p className={style.bath}>BY PRODUCT TYPE</p>
@@ -187,7 +207,7 @@ const Navbar = () => {
             </Menu>
 
             <Menu isLazy >
-              <MenuButton>BODY CARE</MenuButton>
+              <MenuButton className={style.body}>BODY CARE</MenuButton>
               <MenuList className={style.menu}>
 
                 <p className={style.bath}>BATH BODY</p>
@@ -200,7 +220,7 @@ const Navbar = () => {
               </MenuList>
             </Menu>
             <Menu isLazy>
-              <MenuButton>HAIR CARE</MenuButton>
+              <MenuButton className={style.body}>HAIR CARE</MenuButton>
               <MenuList>
                 {/* MenuItems are not rendered unless Menu is open */}
                 <p className={style.bath}>BY PRODUCT TYPE</p>
@@ -228,7 +248,7 @@ const Navbar = () => {
               </MenuList>
             </Menu>
             <Menu isLazy>
-              <MenuButton>COMBOS</MenuButton>
+              <MenuButton className={style.body}>COMBOS</MenuButton>
               <MenuList>
                 {/* MenuItems are not rendered unless Menu is open */}
 
@@ -243,7 +263,7 @@ const Navbar = () => {
 
               </MenuList>
             </Menu>
-            <Box>BUILD A BOX</Box>
+            <Box className={style.build}>BUILD A BOX</Box>
           </Box>
         </Box>
 
