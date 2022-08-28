@@ -2,14 +2,14 @@
     height: 135px;
     width: 450px;
     margin: auto;
-    border: 1px solid red;
+   
     display: none;
     gap: 10px;
 }
 .logobox{
     height: 135px;
     width: 150px;
-    border: 1px solid black;
+  
     
 }
 .logoimg{
@@ -35,19 +35,19 @@
 .main{
     height: auto;
     width: 100%;
-    border: 1px solid red;
+   
     display: flex;
     margin-top: 20px;
 }
 .side{
     height: auto;
     width: 20%;
-    border: 1px solid red;
+   
 }
 .mid{
     height: auto;
     width: 80%;
-    border: 1px solid red;
+    
 }
 .home{
     display: flex;
@@ -65,11 +65,15 @@
 .category{
     height: 42px;
     width: 242px;
-    border: 1px solid red;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     /* margin-top: 10px; */
     color: #232323;
     font-size: 16px;
     /* padding-left: -55px; */
+}
+.category:hover{
+    cursor: pointer;
+    color: #475D4B;
 }
 .mid{
     display: grid;
@@ -79,8 +83,8 @@
 }
 .sorting{
     height: 30px;
-    width: 150px;
-    border: 1px solid red;
+    width: 120px;
+  
     margin-left: 1100px;
     margin-top: 20px;
     display: flex;
@@ -92,10 +96,25 @@
     display: flex;
 }
 
+.featured{
+    margin-top: -8px;
+}
 
+.featured:hover{
+    border-bottom: 1.5px solid #475D4B;
+}
 @media all and (max-width:683px)
 {
     .logos{
         display: flex;
+    }
+    .side{
+        display: none;
+    }
+    .mid{
+      
+        grid-template-columns: repeat(2,1fr);
+       margin: auto;
+        /* border: 1px solid red; */
     }
 }

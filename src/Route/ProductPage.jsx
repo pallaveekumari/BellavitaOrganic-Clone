@@ -19,99 +19,23 @@ import {
  
 } from '@chakra-ui/react'
 import { AppContext } from '../Context/AppContext'
+import Footer from '../Components/Footer'
 const ProductPage = ()=> {
 
   const [data,setData]=useState(productpage)
 
-  const [text,setText] =useState("")
+ 
 
   
-  const {handlesearch,getProductdata,productdata}=useContext(AppContext)
+  const {getProductdata,productdata,handlesorttitle,handlesort}=useContext(AppContext)
 
 
   useEffect(()=>{
-    getProductdata(productdata)
-  })
+    getProductdata()
+  },[])
 
-const handlesort=(type)=>{
-  if(type==="LTH")
-  {
-    const updated=data.sort((a,b)=>{
-      if(a.price>b.price)
-      {
-        return 1;
-      }
-      else if(a.price<b.price)
-      {
-        return -1;
-      }
-      else
-      {
-        return 0;
-      }
-    })
-  setData([...updated])
-  }
-  else
-  {
-     const updated=data.sort((a,b)=>{
-      if(a.price>b.price)
-      {
-        return -1;
-      }
-      else if(a.price<b.price)
-      {
-        return 1;
-      }
-      else
-      {
-        return 0;
-      }
-     })
-     setData([...updated])
-  }
-}
 
-const handlesorttitle=(type)=>{
-  if(type==="ATZ")
-  {
-    const updated=data.sort((a,b)=>{
-      if(a.title>b.title)
-      {
-        return 1;
-      }
-      else if(a.title<b.title)
-      {
-        return -1;
-      }
-      else
-      {
-        return 0;
-      }
-    })
-  setData([...updated])
-  }
-  else
-  {
-     const updated=data.sort((a,b)=>{
-      if(a.title>b.title)
-      {
-        return -1;
-      }
-      else if(a.title<b.title)
-      {
-        return 1;
-      }
-      else
-      {
-        return 0;
-      }
-     })
-     setData([...updated])
-  }
-}
-
-console.log(text)
+  
 
   return (
     <div>
@@ -134,39 +58,12 @@ console.log(text)
         </Box>
 
 
-        <Popover>
-  <PopoverTrigger>
-    <Button>Search</Button>
-  </PopoverTrigger>
- 
-    <PopoverContent>
-      <PopoverArrow />
-    
-    
-      <PopoverBody>
-        {/* <Button colorScheme='blue'>Button</Button> */}
-        <input
-         value={text}
-          onChange={(e)=>setText(e.target.value)}
-           type="text" placeholder='search your products'/>
-        
-        <Button
-        onClick={()=>{
-          handlesearch(text)
-          alert("Go Below For Results")
-          }}>Go</Button>
-      </PopoverBody>
-     
-    </PopoverContent>
- 
-</Popover>
-
 
 
 
         <Box className={style.sorting}>Sort By:
         <Menu isLazy>
-  <MenuButton>Featured</MenuButton>
+  <MenuButton className={style.featured}>Featured</MenuButton>
   <MenuList>
     
    
@@ -196,16 +93,13 @@ console.log(text)
         <Box className={style.side}>
             <Box className={style.home}>
               <p>Home</p>
-              {/* <i className="fa-solid fa-greater-than"></i> */}
+            
               <p>Collection</p>
-              {/* <i className="fa-solid fa-greater-than"></i> */}
+            
               <p>#New Arrivals</p>
             </Box>
 
-            <Box>
-            {/* <i className="fa-solid fa-bars-sort"></i> */}
-            <p>REFINE BY</p>
-            </Box>
+            
 
             <p className={style.cat}>CATEGORIES</p>
             <Box className={style.category}> Shop All </Box>
@@ -236,7 +130,7 @@ console.log(text)
 
          </Box>
 
-
+<Footer/>
     </div>
   )
 }

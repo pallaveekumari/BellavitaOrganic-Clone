@@ -4,6 +4,8 @@ import {Heading,Box} from "@chakra-ui/react"
 // import { useState } from 'react';
 import { AppContext } from '../Context/AppContext';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../Components/Footer';
+import Navbar from '../Components/Navbar';
 
 const initial = {
   email:"",
@@ -37,6 +39,7 @@ const handleChange=(e)=>{
 console.log(signData)
   return (
     <div>
+      <Navbar/>
       <Heading fontWeight="medium" fontSize="50px" fontFamily="Segoi-ui">Create account</Heading>
       <Box className={style.fname}>
         <input className={style.name} name="fname" type="text" placeholder='First Name' onChange={handleChange}/>
@@ -60,6 +63,8 @@ console.log(signData)
         navigate("/login");
       }}>Create</button>
     </Box>
+
+    <Footer/>
     </div>
   )
 }

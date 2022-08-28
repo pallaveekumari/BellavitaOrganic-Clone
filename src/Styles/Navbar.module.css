@@ -15,6 +15,15 @@
     margin-top: 20px;
     border-radius: 5px;
 }
+.bagbtn{
+    
+        height: 24px;
+        width: 24px; 
+        border: 0.5px solid black;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    
 
 .navbox{
     display: flex;
@@ -51,21 +60,38 @@
     width: 100%;
 }
 .cprice{
-
+height: 50px;
+/* width: 250px; */
+/* border: 1px solid red; */
 display: flex;
-gap: 5px;
+gap: 30px;
 color: #475D4B;
+/* justify-content: space-between; */
+
 }
 .container{
+   
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 margin-bottom: 20px;
 }
 .cbutton{
     display: flex;
-    margin-left: -60px;
-    margin-top: 90px;
-  
+   
+   
+}
+.del{
+    margin-left: 20px;
 }
 .hamburger{
     display: none;
+}
+.build:hover{
+cursor: pointer;
+border-bottom: 1.5px solid #475D4B;
+}
+.body:hover{
+    border-bottom: 1.5px solid #475D4B;
+}
+.navicon:hover{
+    cursor: pointer;
 }

@@ -1,0 +1,219 @@
+.container{
+    height: 307px;
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    background-color: #E4EFDA80;
+    margin-top: 20px;
+}
+.container:hover{
+    cursor: pointer;
+   
+}
+.container1{
+    height: 300px;
+    width: 250px;
+    /* border: 1px solid red; */
+    font: bold;
+    text-align: left;
+    
+}
+.container2{
+    height: 300px;
+    width:250px;
+    /* border: 1px solid red; */
+    text-align: left;
+    
+}
+.container3{
+    height: 300px;
+    width: 430px;
+    /* border: 1px solid red; */
+    text-align: left;
+    
+}
+.container4{
+    height: 300px;
+    width: 430px;
+    /* border: 1px solid red; */
+    text-align: left;
+  
+}
+.info{
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.info:hover{
+    /* font-size: 15px; */
+    border-bottom: 1px solid #475D4B;
+}
+
+.bottom{
+    height: 60px;
+    width: 100%;
+    /* border: 1px solid red; */
+    background-color: #475D4B;
+    display: flex;
+}
+.botimg{
+display: block;
+}
+
+.botbox{
+    height: 30px;
+    width: 30px;
+    /* border:1px solid red; */
+}
+.text{
+    color: #000000;
+    font-weight: light;
+    margin-top: 10px; 
+}
+.text:hover{
+    color:green;
+}
+.input{
+    height: 40px;
+    width: 300px;
+    border: 1px solid #475D4B;
+    margin-top: 10px;
+}
+.subbtn{
+    height: 40px;
+    width: 150px;
+    border: 1px solid #475D4B;
+    color: aliceblue;
+    background-color: #475D4B;
+    font-weight: bold;
+    margin-top: 20px;
+
+
+}
+
+.foot{
+    color: white;
+    margin-left: 400px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.home{
+    display: flex;
+   
+}
+.home1{
+    display: flex;
+   
+}
+.home2{
+    display: flex;
+   
+}
+.home3{
+    display: flex;
+   
+}
+
+.boticons{
+    display: flex;
+    margin-left: 600px;
+    margin-top: 20px;
+    gap: 10px;
+}
+.insta{
+    height: 30px;
+    
+}
+
+#pint{
+    margin-bottom: -30px;
+}
+
+
+
+
+
+
+.mfoot{
+    height: 420px;
+    width: 100%;
+    /* border: 1px solid red; */
+    background-color: #E4EFDA80;
+    margin-top: 20px;
+    display: none;
+}
+.fbox{
+    height: 120px;
+    width: 234px;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 10px;
+}
+.supp{
+    color: #475D4B;
+    /* text-align: left; */
+    margin-top: 20px;
+    border-top: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.join{
+    margin: auto;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #475D4B;
+}
+
+.submit{
+    height: 40px;
+    width: 95%;
+    border:1px solid white;
+    margin: auto;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.subinput{
+    height: 100%;
+    width: 100%;
+
+}
+.submitbtn{
+   
+    font-weight: bold;
+    width: 100px;
+    height: 35px;
+    background-color: #475D4B;
+    color: white;
+}
+.ficon{
+    height: 20px;
+    width: 120px;
+    margin: auto;
+    display: flex;
+    /* border: 1px solid red; */
+    margin-top: 10px;
+    gap: 15px;
+}
+
+.fbell{
+    height: 40px;
+    width: 200px;
+    margin: auto;
+    color: #475D4B;
+    margin-top: 10px;
+}
+
+@media all and (max-width:683px)
+{
+    .mfoot{
+        display: flex;
+        flex-direction: column;
+    }
+    .container{
+        display: none;
+    }
+}

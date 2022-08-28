@@ -11,15 +11,16 @@ const [userData,setuserData]=useState([])
 
 const [cartdata,setcartdata]=useState([])
 
-const [qty,setqty]=useState(1)
+
 
 const [productdata,setproductdata]=useState([])
 const [total, setTotal] = useState(0);
-const handleTotal = (arr) => {
-  let updatedTotal =  arr.reduce((sum, el) => {
-     return sum + el.price;
+
+const handleTotal = () => {
+   let totalprice=cartdata.reduce((sum, el) => {
+     return sum + (el.price*el.qty);
    }, 0);
-   setTotal(updatedTotal)
+  setTotal(totalprice)
  };
 
 const handleAddsign=(signupdata)=>{
@@ -49,14 +50,7 @@ const handleDeleteData=(id)=>{
   setcartdata(updated)
 };
 
-const handleqty=()=>
-{
-  setqty(qty+1)
-}
 
-const handleDecqty=()=>{
-  setqty(qty-1)
-}
 
 const handlesearch=(query)=>{
   axios.get(`https://bellavita-organic.herokuapp.com/productpage?q=${query}`)
@@ -70,6 +64,100 @@ const getProductdata=()=>{
 
 
 
+const handlesort=(type)=>{
+  if(type==="LTH")
+  {
+    const updated=productdata.sort((a,b)=>{
+      if(a.price>b.price)
+      {
+        return 1;
+      }
+      else if(a.price<b.price)
+      {
+        return -1;
+      }
+      else
+      {
+        return 0;
+      }
+    })
+  setproductdata([...updated])
+  }
+  else
+  {
+     const updated=productdata.sort((a,b)=>{
+      if(a.price>b.price)
+      {
+        return -1;
+      }
+      else if(a.price<b.price)
+      {
+        return 1;
+      }
+      else
+      {
+        return 0;
+      }
+     })
+     setproductdata([...updated])
+  }
+}
+
+const handlesorttitle=(type)=>{
+  if(type==="ATZ")
+  {
+    const updated=productdata.sort((a,b)=>{
+      if(a.title>b.title)
+      {
+        return 1;
+      }
+      else if(a.title<b.title)
+      {
+        return -1;
+      }
+      else
+      {
+        return 0;
+      }
+    })
+  setproductdata([...updated])
+  }
+  else
+  {
+     const updated=productdata.sort((a,b)=>{
+      if(a.title>b.title)
+      {
+        return -1;
+      }
+      else if(a.title<b.title)
+      {
+        return 1;
+      }
+      else
+      {
+        return 0;
+      }
+     })
+     setproductdata([...updated])
+  }
+}
+
+const handleqty=(id,amount)=>{
+  let updatedData= cartdata.map(el=>{
+    if(el.id==id)
+    {
+        return {
+           ...el,
+           qty: el.qty+amount
+        }
+    }
+    else{
+        return el;
+    }
+  })
+  setcartdata(updatedData)
+}
+
   return (
     <AppContext.Provider
      value=
@@ -82,15 +170,18 @@ const getProductdata=()=>{
      handleAddToCart,
      cartdata,
      handleDeleteData,
-     setqty,
-     qty,
+   
+     
      handleqty,
-     handleDecqty,
+     
      handlesearch,
      productdata,
      getProductdata,
      handleTotal,
-     total
+     total,
+     handlesort,
+     handlesorttitle,
+     handleqty
     
 
      }}
