@@ -40,6 +40,21 @@ console.log(signData)
   return (
     <div>
       <Navbar/>
+
+      <Box className={style.logos}>
+        <Box className={style.logobox}>
+        <img className={style.logoimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BV0_500_x_500_V3_480x.png?v=1653046371" alt="" />
+       </Box>
+       <Box className={style.logobox}>
+        <img className={style.logoimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Brave_500_x_500_V3_480x.png?v=1653046388" alt="" />
+        </Box>
+        <Box className={style.logobox}>
+        <img className={style.logoimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVL_220_x_220_480x.png?v=1653304721" alt="" />
+        </Box>
+        </Box>
+
+
+
       <Heading fontWeight="medium" fontSize="50px" fontFamily="Segoi-ui">Create account</Heading>
       <Box className={style.fname}>
         <input className={style.name} name="fname" type="text" placeholder='First Name' onChange={handleChange}/>

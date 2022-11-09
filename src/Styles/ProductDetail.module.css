@@ -48,6 +48,9 @@
     border-radius: 5px;
     margin-top: 10px;
 }
+.best{
+    cursor: pointer;
+}
 
 @media all and (max-width:683px)
 {

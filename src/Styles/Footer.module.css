@@ -4,7 +4,9 @@
     /* border: 1px solid red; */
     display: flex;
     background-color: #E4EFDA80;
-    margin-top: 20px;
+    padding: 30px 40px;
+    gap: 50px
+    
 }
 .container:hover{
     cursor: pointer;
@@ -12,37 +14,55 @@
 }
 .container1{
     height: 300px;
-    width: 250px;
+    width: 18%;
     /* border: 1px solid red; */
-    font: bold;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+    /* padding-right: 100px; */
     
 }
 .container2{
     height: 300px;
-    width:250px;
+    width: 18%;
     /* border: 1px solid red; */
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
     
 }
 .container3{
     height: 300px;
-    width: 430px;
+    width: auto;
     /* border: 1px solid red; */
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
     
 }
 .container4{
     height: 300px;
-    width: 430px;
+    width: auto;
     /* border: 1px solid red; */
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+    
   
 }
 .info{
     color: #000000;
     font-weight: bold;
     margin-bottom: 10px;
+    margin-top: 20px;
 }
 .info:hover{
     /* font-size: 15px; */
@@ -68,7 +88,11 @@ display: block;
 .text{
     color: #000000;
     font-weight: light;
-    margin-top: 10px; 
+    /* margin-top: 10px;  */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
 }
 .text:hover{
     color:green;
@@ -99,20 +123,12 @@ display: block;
 }
 .home{
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
    
 }
-.home1{
-    display: flex;
-   
-}
-.home2{
-    display: flex;
-   
-}
-.home3{
-    display: flex;
-   
-}
+
 
 .boticons{
     display: flex;
@@ -125,9 +141,9 @@ display: block;
     
 }
 
-#pint{
+/* #pint{
     margin-bottom: -30px;
-}
+} */
 
 
 
@@ -207,13 +223,16 @@ display: block;
     margin-top: 10px;
 }
 
-@media all and (max-width:683px)
+@media all and (max-width:700px)
 {
     .mfoot{
         display: flex;
         flex-direction: column;
     }
     .container{
+        display: none;
+    }
+    .bottom{
         display: none;
     }
 }

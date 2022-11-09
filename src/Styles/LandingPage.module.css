@@ -4,11 +4,13 @@
     /* border:1px solid red; */
     display: flex;
     margin: auto;
+    margin-top: 10px;
 }
 .fimg{
     height:100%;
     width:100%;
     border-radius: 15px;
+
 }
 .btn{
     height: 30px;
@@ -35,7 +37,7 @@
 .luxury{
     height: 240px;
     width: 100%;
-    border: 1px solid black;
+   
     margin: auto;
     margin-bottom: 10px;
     display: grid;
@@ -84,7 +86,7 @@
 .spotbox{
     height: 234px;
     width: 216px;
-    /* border: 1px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
 }
 .spotimg{
@@ -215,7 +217,7 @@ border: 2px solid #b7cfbc;
     border-radius: 15px;
 }
 .our{
-     height:530px;
+     height:500px;
      width:100%;
     
       background:#e4efda
@@ -238,6 +240,7 @@ margin:auto;
     }
     .mob{
         margin: auto;
+        margin-top: 20px;
     }
      .luxury{
          height: 800px;
@@ -272,7 +275,8 @@ margin:auto;
     .mobile{
         margin-top:60px;
     }
-    /* .our{
-        height: 400px;
-    } */
+    #siz{
+        font-size: 17px;
+        margin-top: 10px;
+    }
 }
