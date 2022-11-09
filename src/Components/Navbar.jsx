@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
 import React, { useContext, useEffect, useState } from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import style from "../Styles/Navbar.module.css"
 // import Link from "react-router-dom"
 import {
@@ -48,15 +48,15 @@ const Navbar = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [overlay, setOverlay] = React.useState(<OverlayOne />)
-  const [text,setText] =useState("")
+  const [text, setText] = useState("")
 
   const navigate = useNavigate()
-  const {handlesearch, cartdata, handleDeleteData, handleqty ,handleTotal,total} = useContext(AppContext)
+  const { handlesearch, cartdata, handleDeleteData, handleqty, handleTotal, total } = useContext(AppContext)
 
-useEffect(()=>{
-handleTotal()
-})
-  
+  useEffect(() => {
+    handleTotal()
+  })
+
 
 
   return (
@@ -66,35 +66,35 @@ handleTotal()
         <button style={{ background: "#475D4B", color: "white", borderRadius: "5px", width: "110px", height: "30px", marginTop: "5px", border: "none" }}>Shop Now</button>
       </Box>
       <Box style={{ height: "70px", width: "85%", display: "flex", justifyContent: "space-between", margin: "auto" }}>
-        
-        
+
+
         <Box className={style.loginlogo}>
           <Link to="/login">
-          <i className="fa-solid fa-user-plus"></i>
+            <i className="fa-solid fa-user-plus"></i>
           </Link>
         </Box>
-       <Link to="/">
-        <Box className={style.navicon} style={{ display: "flex", justifyContent: "space-evenly", height: "70px", width: "230px" }}>
-          <img style={{ height: "60px", width: "60px" }}
-            src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVO_220_x_220_480x.png?v=1653304683" alt="icon" />
-          <img style={{ height: "60px", width: "60px" }}
-            src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Brave_220_x_220_480x.png?v=1653304701" alt="icon1" />
-          <img style={{ height: "60px", width: "60px" }}
-            src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVL_220_x_220_480x.png?v=1653304721" alt="icon2" />
-        </Box>
+        <Link to="/">
+          <Box style={{ display: "flex", justifyContent: "space-evenly", height: "70px", width: "230px" }}>
+            <img className={style.navicon} style={{ height: "60px", width: "60px" }}
+              src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVO_220_x_220_480x.png?v=1653304683" alt="icon" />
+            <img className={style.navicon} style={{ height: "60px", width: "60px" }}
+              src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Brave_220_x_220_480x.png?v=1653304701" alt="icon1" />
+            <img className={style.navicon} style={{ height: "60px", width: "60px" }}
+              src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVL_220_x_220_480x.png?v=1653304721" alt="icon2" />
+          </Box>
         </Link>
         <Box className={style.navbox}>
-          <Box>
-            <input  value={text}
-          onChange={(e)=>setText(e.target.value)}
-           type="text"style={{ fontStyle: "Segoe UI", width: "300px", height: "40px", borderRadius: "10px", border: "1px solid #4444", marginTop: "15px" }} placeholder='Search for Products' />
+          <Box className={style.navb}>
+            <input className={style.sinput} value={text}
+              onChange={(e) => setText(e.target.value)}
+              type="text" placeholder='Search for Products' />
           </Box>
           <Box className={style.searchlogo}>
-            <button onClick={()=>{
-          handlesearch(text)
-          alert("Go Below For Results")
-          }}>
-            <i className="fa-solid fa-magnifying-glass"></i>
+            <button onClick={() => {
+              handlesearch(text)
+              alert("Go Below For Results")
+            }}>
+              <i className="fa-solid fa-magnifying-glass"></i>
             </button>
           </Box>
           <Box className={style.searchlogo}>
@@ -111,13 +111,13 @@ handleTotal()
                 onOpen()
               }}
             >
-              <i className="fa-solid fa-bag-shopping"></i>
+             <Box> {cartdata.length} <i className="fa-solid fa-bag-shopping"></i> </Box> 
             </Button>
             <Modal isCentered isOpen={isOpen} onClose={onClose}>
               {overlay}
               <ModalContent>
                 <Button>
-                  <Link to="/product" ><button>Continue Shopping</button></Link>
+                  <Link to="/product"><button>Continue Shopping</button></Link>
                 </Button>
                 <ModalHeader>Your Cart</ModalHeader>
 
@@ -135,27 +135,27 @@ handleTotal()
                               <img className={style.cbox} src={el.image} alt="" />
                             </Box>
                             <Text>{el.title}</Text>
-                            </Box>
-                            <Box className={style.cprice}>
+                          </Box>
+                          <Box className={style.cprice}>
 
-                              <Text>RS: {el.price*el.qty}</Text>
+                            <Text>RS: {el.price * el.qty}</Text>
 
-                              <Text as="s">{el.strikeprice}</Text>
-                           
+                            <Text as="s">{el.strikeprice}</Text>
+
                             <Box className={style.cbutton}>
 
-                              <Button disabled={el.qty===1} onClick={()=>handleqty(el.id,-1)}>-</Button>
+                              <Button disabled={el.qty === 1} onClick={() => handleqty(el.id, -1)}>-</Button>
                               <Text>{el.qty}</Text>
-                              <Button onClick={()=>handleqty(el.id,1)}>+</Button>
+                              <Button onClick={() => handleqty(el.id, 1)}>+</Button>
 
-                              <Button className={style.del}  onClick={() => handleDeleteData(el.id)}>
+                              <Button className={style.del} onClick={() => handleDeleteData(el.id)}>
                                 <i className="fa-solid fa-trash-can"></i>
                               </Button>
-                              </Box>
                             </Box>
+                          </Box>
 
-                         
-                         
+
+
                         </Box>
                       )
                     })
@@ -166,7 +166,7 @@ handleTotal()
                   }
                 </ModalBody>
                 <ModalFooter>
-                <Box>Total:{total}</Box>
+                  <Box>Total:{total}</Box>
                   <Button>CHECKOUT</Button>
                 </ModalFooter>
               </ModalContent>
@@ -184,12 +184,16 @@ handleTotal()
 
 
       </Box>
-      <Box style={{ height: "30px", width: "87%", margin: "auto", borderBottom: "1px solid #4444" }}>
-        <Box style={{ height: "40px", width: "80%", margin: "auto", _hover: { cursor: "pointer" } }}>
-          <Box style={{ display: "flex", justifyContent: "space-evenly", fontSize: "15px", color: "#475D4B" }}>
+      <Box className={style.snav} style={{ height: "30px", width: "87%", margin: "auto", borderBottom: "1px solid #4444" }}>
+        <Box style={{ height: "100%", width: "80%", margin: "auto" }}>
+          <Box fontSize={{
+            "base": "8px",
+            "md": "10px",
+            "lg": "13px"
+          }} style={{ display: "flex", maxHeight: "30px", justifyContent: "space-evenly", color: "#475D4B" }}>
             <Box className={style.build}>SHOP ALL</Box>
-           
-           <Link to="/product" ><Box className={style.build}>NEW ARRIVALS</Box></Link> 
+
+            <Link to="/product" ><Box className={style.build}>NEW ARRIVALS</Box></Link>
             <Box className={style.build}>BESTSELLERS</Box>
             <Menu isLazy>
               <MenuButton className={style.body}>SKIN CARE</MenuButton>

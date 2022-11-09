@@ -15,7 +15,7 @@ const [cartdata,setcartdata]=useState([])
 
 const [productdata,setproductdata]=useState([])
 const [total, setTotal] = useState(0);
-
+const [loading,setLoading]=useState(false)
 const handleTotal = () => {
    let totalprice=cartdata.reduce((sum, el) => {
      return sum + (el.price*el.qty);
@@ -58,8 +58,15 @@ const handlesearch=(query)=>{
 }
 
 const getProductdata=()=>{
+  setLoading(true)
   axios.get(`https://bellavita-organic.herokuapp.com/productpage`)
-  .then(res=>setproductdata(res.data))
+
+  .then(res=>{
+    
+    setproductdata(res.data)
+  setLoading(false)
+})
+  
 }
 
 
@@ -181,7 +188,8 @@ const handleqty=(id,amount)=>{
      total,
      handlesort,
      handlesorttitle,
-     handleqty
+     handleqty,
+     loading
     
 
      }}

@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import React, { useContext, useEffect, useState } from 'react'
 import Navbar from "../Components/Navbar"
 import style from "../Styles/ProductPage.module.css"
-import {Box} from "@chakra-ui/react"
+import {Box,Spinner} from "@chakra-ui/react"
 import { productpage } from '../Utils/data'
 import ProductDetails from '../Components/ProductDetails'
 import {
@@ -27,7 +27,7 @@ const ProductPage = ()=> {
  
 
   
-  const {getProductdata,productdata,handlesorttitle,handlesort}=useContext(AppContext)
+  const {getProductdata,productdata,handlesorttitle,handlesort,loading}=useContext(AppContext)
 
 
   useEffect(()=>{
@@ -113,6 +113,17 @@ const ProductPage = ()=> {
             <Box className={style.category}> Build a Box</Box>
         </Box>
      
+ {
+  loading ? <Spinner
+  thickness='8px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='blue.500'
+  size='xl'
+  className={style.spin}
+  />
+  : 
+ 
           <Box className={style.mid}>
           
             
@@ -127,7 +138,7 @@ const ProductPage = ()=> {
 
          
           </Box>
-
+}
          </Box>
 
 <Footer/>

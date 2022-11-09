@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import style from "../Styles/Productcard.module.css"
 import {Heading,Text} from "@chakra-ui/react"
 import { AppContext } from '../Context/AppContext'
@@ -6,6 +6,7 @@ import { AppContext } from '../Context/AppContext'
 // const Productcard = ({topimg,image,id,category,price,strikeprice,title}) => {
     const Productcard = ({el}) => {
         const {handleAddToCart}=useContext(AppContext)
+        const [hover,setHover] = useState(false);
   return (
     <div className={style.box} key={el.id}>
         
@@ -13,7 +14,7 @@ import { AppContext } from '../Context/AppContext'
         <img className={style.top} src={el.topimg} alt="" />
         </div>
         <div className={style.best}>
-        <img src={el.image} alt="" />
+        <img onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} src={hover?el.himage: el.image} alt="" />
         </div>
         <h1 className={style.title}>{el.title}</h1>
         <p className={style.category}>{el.category}</p>

@@ -95,3 +95,31 @@ border-bottom: 1.5px solid #475D4B;
 .navicon:hover{
     cursor: pointer;
 }
+.sinput{
+     font-style: "Segoe UI";
+      width: 300px;
+       height: 40px;
+       border: 1px solid #4444;
+        border-radius: 10px;
+        margin-top: 15px;
+         
+         
+}
+
+@media all and (max-width:700px)
+{
+
+    .navicon{
+        display: none;
+    }
+    .snav
+    {
+        display: none;
+    }
+   .sinput{
+    width: 500px;
+    /* margin-left: -200px; */
+   
+   }
+   
+}

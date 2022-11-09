@@ -6,12 +6,13 @@ import Productcard from '../Components/Productcard'
 import Navbar from '../Components/Navbar'
 import 'react-slideshow-image/dist/styles.css'
 import React, { Component } from "react";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { render } from "@testing-library/react";
 import { Fade } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
+import 'react-slideshow-image/dist/styles.css';
+import Slider from "../Components/Slider"
 
 import Footer from "../Components/Footer"
 
@@ -43,6 +44,7 @@ const LandingPage = () => {
         <img className={style.logoimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/BVL_220_x_220_480x.png?v=1653304721" alt="" />
         </Box>
         </Box>
+        
 
 
     <Box className={style.bestbox}>
@@ -64,8 +66,8 @@ const LandingPage = () => {
 
                 <Box className={style.fbox}>
                    
-                <Box className={style.fimg}>
-                    <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/1200x399_4bbe001a-978e-491b-a1a4-1fff50c9d9b9_1200x.jpg?v=1660116668" alt="" />
+                <Box >
+                    <img className={style.fimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/1200x399_4bbe001a-978e-491b-a1a4-1fff50c9d9b9_1200x.jpg?v=1660116668" alt="" />
                 </Box>
                    
 
@@ -79,7 +81,7 @@ const LandingPage = () => {
                     <Box className={style.mob}>
                         <img className={style.mobimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/mobikwik-1200X80_1200x.png?v=1661506595" alt="" />
                     </Box>
-                    <Heading className={style.best}>BESTSELLERS</Heading>
+                    <Heading id={style.siz} className={style.best}>BESTSELLERS</Heading>
 
 
                     <div className={style.items}>
@@ -92,8 +94,8 @@ const LandingPage = () => {
                             })
                         }
                     </div>
-
-                    <Heading fontSize="22px" color="#475D4B" mb="10px">IN THE SPOTLIGHT</Heading>
+                    <Slider/>
+                    <Heading id={style.siz} fontSize="22px" color="#475D4B" mb="10px">IN THE SPOTLIGHT</Heading>
 
 
                     <Box className={style.spot}>
@@ -140,7 +142,7 @@ const LandingPage = () => {
 
                     </Box>
 
-                    <Heading fontSize="22px" color="#475D4B" mb="10px">FIND SOLUTIONS FOR</Heading>
+                    <Heading id={style.siz} fontSize="22px" color="#475D4B" mb="10px">FIND SOLUTIONS FOR</Heading>
 
                     <Box className={style.find}>
                         <Box className={style.findbox} >
@@ -174,7 +176,7 @@ const LandingPage = () => {
                     <Box className={style.btnlux}>
 
                     </Box>
-                    <Heading fontSize="22px" color="#475D4B" mb="20px">LUXURY FRAGRANCES</Heading>
+                    <Heading id={style.siz} fontSize="22px" color="#475D4B" mb="20px">LUXURY FRAGRANCES</Heading>
                     <Box className={style.luxury}>
                         <Box className={style.lux}>
                             <img className={style.luximg} src="https://cdn.shopify.com/s/files/1/0561/9256/5292/files/category_tile_men_680x680.jpg?v=1652265181" alt="" />
@@ -201,7 +203,7 @@ const LandingPage = () => {
                         <img className={style.mediaimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Brand-Comms-banner-V2_1200x.jpg?v=1660051394" alt="icons" />
                     </Box>
                     <Box>
-                        <Heading as={`h2`} style={{ color: "#475D4B", fontSize: "25px" }}>MEDIA COVERAGE</Heading>
+                        <Heading id={style.siz} as={`h2`} style={{ color: "#475D4B", fontSize: "25px" }}>MEDIA COVERAGE</Heading>
                     </Box>
 
                     <Box className={style.media}>
@@ -246,17 +248,17 @@ const LandingPage = () => {
                     </Box>
                     <Box className={style.our} >
                         <Box style={{ height: "80px", width: "100%", background: "#475D4B", marginTop: "200px" }}>
-                            <Box className={style.down} style={{ height: "80px", width: "500px", border: "1px solid red", color: "white", marginLeft: "650px", fontSize: "20px", fontFamily: "Segoe UI" }}>
+                            <Box className={style.down} style={{ height: "80px", width: "500px",color: "white", marginLeft: "650px", fontSize: "20px", fontFamily: "Segoe UI" }}>
                                 <Heading style={{ marginTop: "15px" }}>DOWNLOAD OUR APP</Heading>
                             </Box>
 
                             <Image className={style.mobile} mt="-240px" ml="200px" src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/Download_our_App_Section_Image_V_460x460.png?v=1650369432" alt="" />
 
                             <Box display="flex" gap="25px">
-                                <Box height="68px" width="178px"  mt="-185px" ml="700px">
+                                <Box height="68px" width="178px"  ml="700px">
                                     <Image src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/playstore_460x460_efa998ac-e0d8_460x460.png?v=1650369394" alt="" />
                                 </Box>
-                                <Box height="68px" width="178px" mt="-185px">
+                                <Box height="68px" width="178px" >
                                     <Image src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/app-store-card_460x460_35fc55d1_460x460.png?v=1650369409" alt="" />
                                 </Box>
                             </Box>

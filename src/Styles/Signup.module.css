@@ -37,3 +37,29 @@
     color: white; 
     
 }
+.logos{
+    height: 135px;
+    width: 450px;
+    margin: auto;
+    
+    display: none;
+    gap: 10px;
+}
+.logobox{
+    height: 135px;
+    width: 150px;
+    
+    
+}
+.logoimg{
+    height: 100%;
+    width: 100%;
+    border-bottom: 2px solid #475D4B ;
+}
+
+@media all and (max-width:683px)
+{
+    .logos{
+        display: flex;
+    }
+}

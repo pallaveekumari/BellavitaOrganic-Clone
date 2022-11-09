@@ -103,6 +103,10 @@
 .featured:hover{
     border-bottom: 1.5px solid #475D4B;
 }
+.spin{
+    
+    margin: auto;
+}
 @media all and (max-width:683px)
 {
     .logos{
