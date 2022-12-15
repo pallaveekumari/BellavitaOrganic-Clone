@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# BellavitaOrganic Clone Project 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello Everyone !🌏 I am Pallavee Kumari and I am presenting my individual project Clone of BellavitaOrganic.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Details : 🔭
 
-### `npm start`
+Bella Vita Organic is a natural skincare brand in India.They create handcrafted natural beauty products which can solve all your skin concerns.It has brought high quality yet affordable skincare, natural wellness and beauty products under the umbrella of Indian Ayurveda
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🚀 The link for the same is here :https://bellavitaorganic.com/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Pages & Features 👇
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ - ###  NavBar.    
+ - ### SearchBar.
+ - ### Home Page.
+ - ### Product Page.
+ - ### Cart Page.
+ - ### Footer.
 
-### `npm run build`
+ ## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*Client:* HTML, CSS5 ,Javascript, React, Chakra UI,,Github.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*Server:* Heroku.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- ### Navbar
+![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/public/screenshots/homepage2.png?raw=true)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- ### Home Page
+![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/public/screenshots/homepage.png?raw=true)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/public/screenshots/navbar.png?raw=true)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- ### Footer 
+![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/public/screenshots/footer.png?raw=true)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Lessons Learned
+.
+- I became proficient in reading and understanding the code.
+- I learn about many new things in react and chakar UI that I didn't know before.
+- My skills in React,ES6,DOM Manipulation became better.
+- My code writing style became cleaner as i used ES6 and React to write code and used import export so that code become well structured.
+- I learned how to plan a project and execute that in a limited time frame.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Netlify Link:https://bellavitaaorganiccloneproject.netlify.app/
 
-### Making a Progressive Web App
+### Github Link:https://github.com/pallaveekumari/BellavitaOrganic-Clone
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
