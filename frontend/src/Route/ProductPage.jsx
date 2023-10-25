@@ -128,7 +128,7 @@ const ProductPage = ()=> {
           
             
                  {
-                  productdata.map((el)=>{
+                  productdata && productdata.map((el)=>{
                     return <ProductDetails
                     el={el}
                     />

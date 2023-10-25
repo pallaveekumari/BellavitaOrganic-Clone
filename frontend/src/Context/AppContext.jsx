@@ -59,11 +59,11 @@ const handlesearch=(query)=>{
 
 const getProductdata=()=>{
   setLoading(true)
-  axios.get(`https://bellavita-organic.herokuapp.com/productpage`)
+  axios.get(`http://localhost:8000/allproducts`)
 
   .then(res=>{
     
-    setproductdata(res.data)
+    setproductdata(res.data.data)
   setLoading(false)
 })
   

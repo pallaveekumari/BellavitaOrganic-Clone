@@ -3,12 +3,12 @@ import style from "../Styles/Productcard.module.css"
 import {Heading,Text} from "@chakra-ui/react"
 import { AppContext } from '../Context/AppContext'
 
-// const Productcard = ({topimg,image,id,category,price,strikeprice,title}) => {
+// const Productcard = ({topimg,image,_id,category,price,strikeprice,title}) => {
     const Productcard = ({el}) => {
         const {handleAddToCart}=useContext(AppContext)
         const [hover,setHover] = useState(false);
   return (
-    <div className={style.box} key={el.id}>
+    <div className={style.box} key={el._id}>
         
         <div className={style.topimg}>
         <img className={style.top} src={el.topimg} alt="" />
@@ -38,10 +38,3 @@ import { AppContext } from '../Context/AppContext'
 export default Productcard
 
 
-// key={el.id}
-// img={el.topimg}
-// image={el.image}
-// title={el.title}
-// category={el.category}
-// price={el.price}
-// strikeprice={el.strikeprice}
