@@ -151,9 +151,9 @@ export default function Sliderthird() {
         textAlign: "center",
         height: "100%",
         width: "95%",
-        margin:"auto"
+        margin:"auto",
         // marginLeft: "2.5rem",
-        // border: "2px solid blue"
+        border: "2px solid blue",
 
       }}>
         <Slide {...settings} easing="ease">

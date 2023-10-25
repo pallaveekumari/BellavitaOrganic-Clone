@@ -35,14 +35,18 @@
     font-size:22px;
 }
 .luxury{
-    height: 240px;
+    height: auto;
     width: 100%;
-   
+/*    
     margin: auto;
     margin-bottom: 10px;
     display: grid;
     grid-template-columns: repeat(6,1fr);
-    grid-template-rows: auto;
+    grid-template-rows: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 15px;
     
 }
@@ -62,12 +66,17 @@
     border-radius: 5px;
 }
 .find{
-    height: 220px;
-    width: auto;
+    height: auto;
+    /* width: auto;
     display: grid;
     grid-template-columns: repeat(9,1fr);
-    grid-template-rows: auto;
+    grid-template-rows: auto; */
     gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 .findbox{
     height: 216px;
@@ -75,13 +84,18 @@
     /* border: 1px solid red; */
 }
 .spot{
-    height: 231px;
+    height: auto;
     width: auto;
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: auto;
+    display: flex;
+    /* grid-template-columns: repeat(12,1fr);
+    grid-template-rows: auto; */
+    justify-content: center;
+    align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
     /* overflow-y: scroll; */
+    /* border: 1px solid red; */
 }
 .spotbox{
     height: 234px;
@@ -107,11 +121,16 @@
     margin-top: 5px;
 }
 .media{
-    height: 149px;
-    width: auto;
+    height: auto;
+    /* width: auto;
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows: auto;
+    grid-template-rows: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 .mediabox{
     height: 149px;

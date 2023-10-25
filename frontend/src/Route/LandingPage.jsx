@@ -81,10 +81,10 @@ const LandingPage = () => {
                     <Box className={style.mob}>
                         <img className={style.mobimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/mobikwik-1200X80_1200x.png?v=1661506595" alt="" />
                     </Box>
-                    <Heading id={style.siz} className={style.best}>BESTSELLERS</Heading>
+                    {/* <Heading id={style.siz} className={style.best}>BESTSELLERS</Heading> */}
 
 
-                    <div className={style.items}>
+                    {/* <div className={style.items}>
                         {
                             homepage.map((el) => {
                                 return <Productcard
@@ -93,9 +93,9 @@ const LandingPage = () => {
                                 />
                             })
                         }
-                    </div>
-                    <Slider/>
-                    <Heading id={style.siz} fontSize="22px" color="#475D4B" mb="10px">IN THE SPOTLIGHT</Heading>
+                    </div> */}
+                    {/* <Slider/> */}
+                    <Heading id={style.siz} fontSize="22px" color="#475D4B" mt="2rem" mb="10px">IN THE SPOTLIGHT</Heading>
 
 
                     <Box className={style.spot}>
@@ -138,11 +138,11 @@ const LandingPage = () => {
                     </Box >
 
 
-                    <Box className={style.btnfind}>
+                    {/* <Box className={style.btnfind}>
 
-                    </Box>
+                    </Box> */}
 
-                    <Heading id={style.siz} fontSize="22px" color="#475D4B" mb="10px">FIND SOLUTIONS FOR</Heading>
+                    <Heading id={style.siz} fontSize="22px" color="#475D4B" mt={"2rem"} mb="10px">FIND SOLUTIONS FOR</Heading>
 
                     <Box className={style.find}>
                         <Box className={style.findbox} >
@@ -176,7 +176,7 @@ const LandingPage = () => {
                     <Box className={style.btnlux}>
 
                     </Box>
-                    <Heading id={style.siz} fontSize="22px" color="#475D4B" mb="20px">LUXURY FRAGRANCES</Heading>
+                    <Heading id={style.siz} fontSize="22px" color="#475D4B" mt="2rem" mb="20px">LUXURY FRAGRANCES</Heading>
                     <Box className={style.luxury}>
                         <Box className={style.lux}>
                             <img className={style.luximg} src="https://cdn.shopify.com/s/files/1/0561/9256/5292/files/category_tile_men_680x680.jpg?v=1652265181" alt="" />
