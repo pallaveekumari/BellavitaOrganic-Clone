@@ -4,25 +4,6 @@
     /* border: 5px solid red; */
   }
   
-  /* .slide > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    height: 100vh;
-  }
-  
-  .slide span {
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 20px;
-    color: white;
-    background: rgba(141, 174, 224, 0.5);
-    text-align: center;
-  } */
-
 
   .topimg{
     height: 7%;
@@ -94,3 +75,13 @@
     border-radius: 5px;
 }
   
+@media all and (max-width: 768px) {
+  .box {
+      width: 100%; /* Make the box take up the full width on small screens */
+      margin: 10px; /* Add some spacing around the box */
+  }
+
+  .addbtn {
+      width: 100%; /* Make the button take up the full width on small screens */
+  }
+}

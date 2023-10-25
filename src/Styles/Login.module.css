@@ -62,9 +62,17 @@
 }
 
 
-@media all and (max-width:683px)
-{
-    .logos{
-        display: flex;
+@media all and (max-width: 768px) {
+    .email, .pass {
+        width: 100%; /* Make the input fields take up the full width on small screens */
+        margin: 10px auto; /* Add spacing around the input fields */
+    }
+
+    .logos {
+        display: none; /* Hide the logos on small screens */
+    }
+
+    .signbtn {
+        width: 100%; /* Make the button take up the full width on small screens */
     }
 }

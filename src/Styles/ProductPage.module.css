@@ -107,18 +107,17 @@
     
     margin: auto;
 }
-@media all and (max-width:683px)
-{
-    .logos{
-        display: flex;
+
+@media all and (max-width: 768px) {
+    .main {
+        flex-direction: column; /* Stack the main content on small screens */
     }
-    .side{
-        display: none;
+
+    .side, .mid {
+        max-width: 100%; /* Expand the side and mid sections to full width on small screens */
     }
-    .mid{
-      
-        grid-template-columns: repeat(2,1fr);
-       margin: auto;
-        /* border: 1px solid red; */
+
+    .sorting {
+        margin-left: 0; /* Adjust the margin for the sorting element on small screens */
     }
 }

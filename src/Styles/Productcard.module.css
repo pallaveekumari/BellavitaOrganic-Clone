@@ -52,3 +52,10 @@
     background-color: #475D4B;
     border-radius: 5px;
 }
+
+@media all and (max-width: 700px) {
+    .box {
+        max-width: 100%; /* Make the box take up the full width on small screens */
+        margin: 10px; /* Add some spacing around the box */
+    }
+}
