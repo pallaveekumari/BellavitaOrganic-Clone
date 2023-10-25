@@ -223,16 +223,39 @@ display: block;
     margin-top: 10px;
 }
 
-@media all and (max-width:700px)
-{
-    .mfoot{
-        display: flex;
+@media all and (max-width: 700px) {
+    .container {
+        padding: 10px;
         flex-direction: column;
+        gap: 20px;
     }
-    .container{
+
+    .container1,
+    .container2,
+    .container3,
+    .container4 {
+        width: 100%;
+    }
+
+    .info {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .bottom {
         display: none;
     }
-    .bottom{
-        display: none;
+
+    .mfoot {
+        display: flex;
+    }
+
+    .home {
+        margin-left: 10px;
+    }
+
+    .boticons {
+        margin-left: 10px;
+        margin-top: 10px;
     }
 }
