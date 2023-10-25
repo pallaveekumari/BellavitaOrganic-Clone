@@ -106,20 +106,17 @@ border-bottom: 1.5px solid #475D4B;
          
 }
 
-@media all and (max-width:700px)
-{
 
-    .navicon{
-        display: none;
+@media all and (max-width: 700px) {
+    .navbox {
+        display: none; /* Hide the navigation box on small screens */
     }
-    .snav
-    {
-        display: none;
+
+    .hamburger {
+        display: block; /* Display a hamburger menu icon for small screens */
     }
-   .sinput{
-    width: 500px;
-    /* margin-left: -200px; */
-   
-   }
-   
+
+    .sinput {
+        width: 100%; /* Adjust the input width to fit the screen width */
+    }
 }
