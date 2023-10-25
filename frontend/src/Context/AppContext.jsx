@@ -50,11 +50,11 @@ const handlelogin=async (payload)=>{
 
   try{
     let res=await axios.post("http://localhost:8000/login",payload)
-    return res.data
-
+    return res.data;
   }
   catch(err){
-    console.log("error",err)
+    console.log("error",err);
+    return err.data;
   }
 }
 

@@ -10,8 +10,8 @@ import Navbar from '../Components/Navbar';
 const initial = {
   email:"",
   password:"",
-  fname:"",
-  lname:""
+  firstname:"",
+  lastname:""
 };
 
 
@@ -57,10 +57,10 @@ console.log(signData)
 
       <Heading fontWeight="medium" fontSize="50px" fontFamily="Segoi-ui">Create account</Heading>
       <Box className={style.fname}>
-        <input className={style.name} name="fname" type="text" placeholder='First Name' onChange={handleChange}/>
+        <input className={style.name} name="firstname" type="text" placeholder='First Name' onChange={handleChange}/>
       </Box >
       <Box className={style.lname}>
-        <input className={style.name}  name="lname" type="text" placeholder='Last Name' onChange={handleChange}/>
+        <input className={style.name}  name="lastname" type="text" placeholder='Last Name' onChange={handleChange}/>
       </Box>
       <Box className={style.lname}>
         <input  className={style.name} name="email" type="email" placeholder='Email' onChange={handleChange}/>
@@ -73,9 +73,15 @@ console.log(signData)
       >
         <button className={style.signbtn} onClick={async() => {
         let res=await handleAddsign(signData);
-       alert(res.msg)
-      //  handleclear()
-        navigate("/login");
+        if(res.status){
+
+          alert(res.msg)
+         //  handleclear()
+           navigate("/login");
+        }
+        else{
+          alert(res.msg)
+        }
       }}>Create</button>
     </Box>
 

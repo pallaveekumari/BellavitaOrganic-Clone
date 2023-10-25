@@ -15,7 +15,7 @@ const Login = () => {
 
  
   const [loginData,setloginData]=useState(init)
-  const {signup} = useContext(AppContext)
+  const {handlelogin} = useContext(AppContext)
 
   const navigate=useNavigate()
  
@@ -59,7 +59,16 @@ const Login = () => {
     <button className={style.forget}>Forget your password?</button>
     </Box>
     <Box >
-    <button  onClick={handlelogin} className={style.signbtn}>Sign in</button>
+    <button  onClick={async ()=>{
+      let res = await handlelogin(loginData);
+      if(res.status){
+        alert(res.msg);
+        localStorage.setItem("token",JSON.stringify(res.token));
+        navigate('/')
+      }else{
+        alert(res.msg);
+      }
+    }} className={style.signbtn}>Sign in</button>
     </Box>
     <Box>
        

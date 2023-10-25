@@ -8,7 +8,9 @@ const { UserModel } = require("../Models/User.model");
 
 const Signup = async (req, res) => {
     try {
-      let { firstname, lastname, email, password } = await req.body;
+      const { firstname, lastname, email, password } = req.body;
+      // console.log('hi i am here')
+      // console.log( firstname, lastname, email, password )
       let existingUser = await UserModel.find({ email });
       if (existingUser.length > 0) {
         res.status(400).json({ msg: "USER ALREADY REGISTERED", status: false });
@@ -38,6 +40,7 @@ const Signup = async (req, res) => {
   
   const Login = async (req, res) => {
     try {
+      // console.log('body is ',req.body)
       const { email, password } = await req.body;
       const registeredUser = await UserModel.findOne({ email });
   
@@ -95,13 +98,6 @@ const Signup = async (req, res) => {
     }
   };
   
-
-
-
-
-
-
-
 
 module.exports={
     Signup,
