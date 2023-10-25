@@ -71,9 +71,9 @@ console.log(signData)
       <Box 
       
       >
-        <button className={style.signbtn} onClick={() => {
-        handleAddsign(signData);
-       alert("Sign Up Successfull")
+        <button className={style.signbtn} onClick={async() => {
+        let res=await handleAddsign(signData);
+       alert(res.msg)
       //  handleclear()
         navigate("/login");
       }}>Create</button>

@@ -29,27 +29,7 @@ const Login = () => {
   }
 
 
-  const handlelogin=()=>{
 
-    for(let i=0;i<signup.length;i++)
-    {
-      if
-      (
-         signup[i].email===loginData.email && 
-         signup[i].password===loginData.password
-      )
-      {
-        alert("login successfully")
-        navigate("/")
-        return;
-      }
-      else
-      {
-           alert("Wrong details....")
-      }
-    }
-
-  }
   return (
     <div>
       <Navbar/>

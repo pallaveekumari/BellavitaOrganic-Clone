@@ -23,8 +23,19 @@ const handleTotal = () => {
   setTotal(totalprice)
  };
 
-const handleAddsign=(signupdata)=>{
-   setsignup([...signup,signupdata])
+const handleAddsign=async (signupdata)=>{
+  //  setsignup([...signup,signupdata])
+
+
+  try{
+    let res=await axios.post("http://localhost:8000/signup",signupdata)
+ return res.data
+  }
+  catch(err){
+    console.log("error",err)
+    return err.data;
+  }
+
 }
 
 const handleUserData=({email}) =>{
@@ -34,8 +45,17 @@ const handleUserData=({email}) =>{
   })
 }
 
-const handlelogin=()=>{
-  setisAuth(true)
+const handlelogin=async (payload)=>{
+  // setisAuth(true)
+
+  try{
+    let res=await axios.post("http://localhost:8000/login",payload)
+    return res.data
+
+  }
+  catch(err){
+    console.log("error",err)
+  }
 }
 
 const handleAddToCart=(data)=>{

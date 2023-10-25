@@ -8,7 +8,7 @@ const { UserModel } = require("../Models/User.model");
 
 const Signup = async (req, res) => {
     try {
-      let { name, email, password } = await req.body;
+      let { firstname, lastname, email, password } = await req.body;
       let existingUser = await UserModel.find({ email });
       if (existingUser.length > 0) {
         res.status(400).json({ msg: "USER ALREADY REGISTERED", status: false });
@@ -22,7 +22,7 @@ const Signup = async (req, res) => {
                 status: false,
               });
             } else {
-              let new_user = await new UserModel({ name, email, password: hash });
+              let new_user = await new UserModel({ firstname, lastname, email, password: hash });
               await new_user.save();
               res.status(200).json({ msg: "SIGNUP SUCCESS", status: true });
             }
@@ -52,7 +52,7 @@ const Signup = async (req, res) => {
             msg: "Login successful",
             status: true,
             token,
-            user: { name: registeredUser.name, email: email },
+            user: {  email: email },
           });
         } else {
           bcrypt.compare(
@@ -75,7 +75,7 @@ const Signup = async (req, res) => {
                   msg: "Login successful",
                   status: true,
                   token,
-                  user: { name: registeredUser.name, email: email },
+                  user: { email: email },
                 });
               } else {
                 res
