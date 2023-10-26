@@ -171,19 +171,37 @@ const AppContextProvider = ({ children }) => {
     }
   };
 
-  const handleqty = (id, amount) => {
-    let updatedData = cartdata.map((el) => {
-      if (el.id == id) {
-        return {
-          ...el,
-          qty: el.qty + amount,
-        };
-      } else {
-        return el;
+  const handleqty =async (id, amount) => {
+   
+    const payload = {
+      id:id,
+      type:amount
+    }
+    const token = localStorage.getItem("token")
+    try{
+      // let res = await axios.get("http://localhost:8000/updateQty",payload,{
+      //   headers:{
+      //     Authorization:`Bearer ${token}`
+      //   }
+      // })
+      let res = await fetch("http://localhost:8000/updateQty",{
+        method:"GET",
+        headers:{
+          Authorization:`Bearer ${token}`
+        },
+        body:JSON.stringify(payload)
+      })
+      let data = await res.json();
+      console.log("res is ",data);
+      
+      return data;
+    }
+      catch(err){
+        console.log('error ',err)
+        return err.response.data
       }
-    });
-    setcartdata(updatedData);
-  };
+    }
+  
 
   return (
     <AppContext.Provider

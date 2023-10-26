@@ -41,8 +41,23 @@ const handleRemoveCartData= async (req, res) => {
   }
 };
 
+
+const handleUpdateQuantity=async(req,res)=>{
+  try{
+  const {id,type,userId}=req.body;
+  let data = await cartModel.findOne({_id:id,userId:userId});
+  console.log(data)
+  let updatedData=await cartModel.updateOne({_id:id,userId:userId},{$set:{"qty":data.qty+type}});
+  res.status(200).json({msg:"Updated Successfully",updatedData,status:true})
+  }
+  catch(err){
+    res.status(400).json({ msg: "Something went wrong", error: err,status:false });
+  }
+}
+
 module.exports = {
  getCartData ,
   addCartData,
-  handleRemoveCartData
+  handleRemoveCartData,
+  handleUpdateQuantity
 };

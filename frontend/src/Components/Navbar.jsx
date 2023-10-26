@@ -27,6 +27,7 @@ import { AppContext } from '../Context/AppContext'
 
 
 
+
 const Navbar = () => {
 
 
@@ -145,9 +146,27 @@ const Navbar = () => {
 
                             <Box className={style.cbutton}>
 
-                              <Button disabled={el.qty === 1} onClick={() => handleqty(el.id, -1)}>-</Button>
+                              <Button disabled={el.qty === 1} onClick={async () => {
+                                let response=await handleqty(el._id, -1)
+                                if(response.status){
+                                  alert(response.msg)
+                                  handleGetAllCartData()
+                                }
+                                else{
+                                  alert(response.msg)
+                                }
+                              }}>-</Button>
                               <Text>{el.qty}</Text>
-                              <Button onClick={() => handleqty(el.id, 1)}>+</Button>
+                              <Button onClick={async() => {
+                                let response= await handleqty(el._id, 1)
+                                if(response.status){
+                                  alert(response.msg)
+                                  handleGetAllCartData()
+                                }
+                                else{
+                                  alert(response.msg)
+                                }
+                                }}>+</Button>
 
                               <Button className={style.del} onClick={async() => {
                                 let response=await handleDeleteData(el._id)
