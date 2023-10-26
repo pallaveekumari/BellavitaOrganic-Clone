@@ -22,9 +22,11 @@ import {Text} from "@chakra-ui/react"
         <h2>{el.rating}</h2>
         <i style={{marginTop:"5px",marginLeft:"-25px"}}className="fa-solid fa-star"></i>
         </div>
-       <button  onClick={()=>{
-        handleAddToCart(el)
-     alert("Item added to your cart")
+       <button  onClick={async ()=>{
+        let payload={...el,qty:1}
+        let response=await handleAddToCart(payload)
+        console.log('response is ',response)
+        alert(response.msg)
      }} className={style.addbtn}>ADD TO CART</button>
     </div>
   )

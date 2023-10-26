@@ -12,6 +12,8 @@ const cartSchema=mongoose.Schema({
   price:{type:Number},
   strikeprice:{type:String},
   rating:{type:String},
+  qty:{type:Number},
+  userId:{type:String}
   })
 
   const cartModel=mongoose.model("cartdata",cartSchema)

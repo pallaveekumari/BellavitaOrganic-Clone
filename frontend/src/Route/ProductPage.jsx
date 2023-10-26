@@ -54,7 +54,7 @@ const ProductPage = ()=> {
 
 
         <Box className={style.say}>
-          <img className={style.sayimg} src="https://cdn.shopify.com/s/files/1/0054/6665/2718/collections/1200x235_1200x.jpg?v=1660117006" alt="" />
+          <img className={style.sayimg} src="https://images.yourstory.com/cs/1/b3c1ad06ab5e11e88691f70342131e20/BellaVitaOrganicFeatureProductImage-1577443070160.jpg" alt="" />
         </Box>
 
 

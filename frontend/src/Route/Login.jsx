@@ -63,7 +63,7 @@ const Login = () => {
       let res = await handlelogin(loginData);
       if(res.status){
         alert(res.msg);
-        localStorage.setItem("token",JSON.stringify(res.token));
+        localStorage.setItem("token",res.token);
         navigate('/')
       }else{
         alert(res.msg);

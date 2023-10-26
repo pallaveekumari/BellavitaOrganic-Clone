@@ -51,11 +51,12 @@ const Navbar = () => {
   const [text, setText] = useState("")
 
   const navigate = useNavigate()
-  const { handlesearch, cartdata, handleDeleteData, handleqty, handleTotal, total } = useContext(AppContext)
+  const { handleGetAllCartData,handlesearch, cartdata, handleDeleteData, handleqty, handleTotal, total } = useContext(AppContext)
 
   useEffect(() => {
     handleTotal()
-  })
+    handleGetAllCartData()
+  },[])
 
 
 
