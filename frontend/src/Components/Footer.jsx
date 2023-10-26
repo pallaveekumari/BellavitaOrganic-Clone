@@ -3,7 +3,7 @@ import { Box, Flex, Heading, Image, Button } from "@chakra-ui/react"
 import style from "../Styles/Footer.module.css"
 const Footer = () => {
   return (
-    <div>
+    <div className={style.mainContainer}>
       <Box className={style.container}>
 
 

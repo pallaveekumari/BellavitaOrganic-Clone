@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import style from "../Styles/Login.module.css"
-import {Heading,Box} from "@chakra-ui/react"
+import {Heading,Box, InputGroup, Input, InputRightElement, Button} from "@chakra-ui/react"
 import { useNavigate,Link } from 'react-router-dom'
 import { AppContext } from '../Context/AppContext'
 import Footer from '../Components/Footer'
@@ -16,7 +16,8 @@ const Login = () => {
  
   const [loginData,setloginData]=useState(init)
   const {handlelogin} = useContext(AppContext)
-
+  const [show, setShow] = React.useState(false)
+  const handleClick = () => setShow(!show)
   const navigate=useNavigate()
  
   const handleChange=(e)=>{
@@ -47,13 +48,34 @@ const Login = () => {
         </Box>
         </Box>
 
-
+  <Box className={style.container}>
    <Heading fontWeight="medium">Login</Heading>
    <Box className={style.email}>
     <input className={style.name} name="email" type="email" placeholder='Email' onChange={handleChange}/>
     </Box>
     <Box className={style.pass}>
-        <input className={style.name} name="password" type="password" placeholder='Password' onChange={handleChange}/>
+        {/* <input className={style.name} name="password" type="password" placeholder='Password' onChange={handleChange}/> */}
+        
+    <InputGroup size='md'>
+      <Input
+        // pr='4.5rem'
+        className={style.name} name="password" 
+        type={show ? 'text' : 'password'}
+        placeholder='Enter password'
+      />
+      <InputRightElement width='5rem'>
+        <Button h='1.75rem' size='sm' onClick={handleClick}>
+          {show ? 'Hide' : 'Show'}
+        </Button>
+      </InputRightElement>
+    </InputGroup>
+  
+
+  
+
+    
+    
+    
     </Box>
     <Box>
     <button className={style.forget}>Forget your password?</button>
@@ -73,6 +95,7 @@ const Login = () => {
     <Box>
        
        <Link to= "/signup" ><button className={style.account}>Create account</button></Link> 
+    </Box>
     </Box>
     <Footer/>
     </div>

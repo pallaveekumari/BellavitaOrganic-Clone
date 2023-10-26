@@ -11,6 +11,11 @@
 .container:hover{
     cursor: pointer;
    
+
+}
+
+.mainContainer{
+    margin-top: 5rem;
 }
 .container1{
     height: 300px;

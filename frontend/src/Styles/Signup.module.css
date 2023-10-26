@@ -56,6 +56,15 @@
     width: 100%;
     border-bottom: 2px solid #475D4B ;
 }
+.container{
+    height: 400px;
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 15px;
+}
+
 /* Media query for small screens (max-width: 768px, you can adjust the value) */
 @media all and (max-width: 768px) {
     .fname,

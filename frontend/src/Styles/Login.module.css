@@ -5,7 +5,8 @@
     margin: auto;
     margin-top: 45px;
     color: #475D4B;
-    /* padding: 0 0 0 10px; */
+    padding: 0 0 0 10px;
+    border-radius: 10px;
 }
 .email:hover{
    
@@ -18,14 +19,14 @@
     margin: auto;
     margin-top: 20px;
     color: #475D4B;
+    padding: 0 0 0 10px;
+    border-radius: 10px;
 }
 .pass:hover{
     
     border: 2px solid #475D4B;
 }
-.forget{
-   margin-right: 300px;
-}
+
 .signbtn{
     height: 45px;
     width: 250px;
@@ -61,6 +62,14 @@
     border-bottom: 2px solid #475D4B ;
 }
 
+.container{
+    height: 400px;
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 15px;
+}
 
 @media all and (max-width: 768px) {
     .email, .pass {

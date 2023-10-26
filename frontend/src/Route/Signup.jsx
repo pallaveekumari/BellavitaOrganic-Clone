@@ -36,7 +36,7 @@ const handleChange=(e)=>{
 //   setsignData("")
 // }
 
-console.log(signData)
+// console.log(signData)
   return (
     <div>
       <Navbar/>
@@ -53,7 +53,7 @@ console.log(signData)
         </Box>
         </Box>
 
-
+<Box className={style.container}>
 
       <Heading fontWeight="medium" fontSize="50px" fontFamily="Segoi-ui">Create account</Heading>
       <Box className={style.fname}>
@@ -84,7 +84,7 @@ console.log(signData)
         }
       }}>Create</button>
     </Box>
-
+    </Box>
     <Footer/>
     </div>
   )

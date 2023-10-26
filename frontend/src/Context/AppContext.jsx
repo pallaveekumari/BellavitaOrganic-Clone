@@ -24,10 +24,10 @@ const AppContextProvider = ({ children }) => {
 
     try {
       let res = await axios.post("http://localhost:8000/signup", signupdata);
-      return res.data;
+      return res.data.msg;
     } catch (err) {
       console.log("error", err);
-      return err.data;
+      return  err.response.data
     }
   };
 
@@ -43,10 +43,10 @@ const AppContextProvider = ({ children }) => {
 
     try {
       let res = await axios.post("http://localhost:8000/login", payload);
-      return res.data;
+      return res.data.msg;
     } catch (err) {
       console.log("error", err);
-      return err.data;
+      return  err.response.data
     }
   };
   const handleGetAllCartData = async () => {
