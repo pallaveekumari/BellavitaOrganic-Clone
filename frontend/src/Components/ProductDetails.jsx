@@ -4,7 +4,7 @@ import style from "../Styles/ProductDetail.module.css"
 import {Text} from "@chakra-ui/react"
 // const ProductDetails = ({topimg,image,id,category,price,strikeprice,title,rating}) => {
     const ProductDetails = ({el}) => {
-        const {handleAddToCart}=useContext(AppContext);
+        const {handleGetAllCartData,handleAddToCart}=useContext(AppContext);
         const [hover,setHover] = useState(false);
   return (
     <div className={style.box} key={el.id}>
@@ -25,8 +25,14 @@ import {Text} from "@chakra-ui/react"
        <button  onClick={async ()=>{
         let payload={...el,qty:1}
         let response=await handleAddToCart(payload)
-        console.log('response is ',response)
-        alert(response.msg)
+        if(response.status==true){
+          handleGetAllCartData()
+          alert(response.msg)
+        }
+        else{
+          alert(response.msg)
+        }
+        // console.log('response is ',response)
      }} className={style.addbtn}>ADD TO CART</button>
     </div>
   )

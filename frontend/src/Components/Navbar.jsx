@@ -149,7 +149,16 @@ const Navbar = () => {
                               <Text>{el.qty}</Text>
                               <Button onClick={() => handleqty(el.id, 1)}>+</Button>
 
-                              <Button className={style.del} onClick={() => handleDeleteData(el.id)}>
+                              <Button className={style.del} onClick={async() => {
+                                let response=await handleDeleteData(el._id)
+                                if(response.status==true){
+                                  alert(response.msg)
+                                  handleGetAllCartData()
+                                }
+                                else{
+                                  alert(response.msg)
+                                }
+                              }}>
                                 <i className="fa-solid fa-trash-can"></i>
                               </Button>
                             </Box>

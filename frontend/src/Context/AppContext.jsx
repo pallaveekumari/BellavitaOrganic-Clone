@@ -86,11 +86,20 @@ const AppContextProvider = ({ children }) => {
     }
   };
 
-  const handleDeleteData = (id) => {
-    let updated = cartdata.filter((el) => {
-      return el.id !== id;
-    });
-    setcartdata(updated);
+  const handleDeleteData = async(id) => {
+   try{
+    let token = localStorage.getItem("token");
+    let data=await axios.get(`http://localhost:8000/removecartdata/${id}`,{
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    return data.data
+   }
+   catch(err){
+    console.log('error',err)
+    return err.response.data
+   }
   };
 
   const handlesearch = (query) => {
