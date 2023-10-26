@@ -59,7 +59,9 @@ const Login = () => {
     <InputGroup size='md'>
       <Input
         // pr='4.5rem'
-        className={style.name} name="password" 
+        className={style.name} 
+        onChange={handleChange}
+        name="password" 
         type={show ? 'text' : 'password'}
         placeholder='Enter password'
       />

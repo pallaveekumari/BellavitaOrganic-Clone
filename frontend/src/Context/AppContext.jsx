@@ -20,11 +20,11 @@ const AppContextProvider = ({ children }) => {
   };
 
   const handleAddsign = async (signupdata) => {
-    //  setsignup([...signup,signupdata])
+
 
     try {
       let res = await axios.post("http://localhost:8000/signup", signupdata);
-      return res.data.msg;
+      return res.data;
     } catch (err) {
       console.log("error", err);
       return  err.response.data
@@ -43,7 +43,7 @@ const AppContextProvider = ({ children }) => {
 
     try {
       let res = await axios.post("http://localhost:8000/login", payload);
-      return res.data.msg;
+      return res.data;
     } catch (err) {
       console.log("error", err);
       return  err.response.data
