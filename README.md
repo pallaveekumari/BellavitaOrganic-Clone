@@ -27,18 +27,18 @@ Bella Vita Organic is a natural skincare brand in India.They create handcrafted 
 ## Screenshots
 
 - ### Navbar
-![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/public/screenshots/homepage2.png?raw=true)
+![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/frontend/public/screenshots/homepage2.png?raw=true)
 
 
 - ### Home Page
-![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/public/screenshots/homepage.png?raw=true)
+![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/frontend/public/screenshots/homepage.png?raw=true)
 
 
-![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/public/screenshots/navbar.png?raw=true)
+![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/frontend/public/screenshots/navbar.png?raw=true)
 
 
 - ### Footer 
-![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/public/screenshots/footer.png?raw=true)
+![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/frontend/public/screenshots/footer.png?raw=true)
 
 
 ## Lessons Learned
