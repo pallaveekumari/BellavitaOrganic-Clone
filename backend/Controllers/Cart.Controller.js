@@ -17,18 +17,33 @@ const addCartData = async (req, res) => {
       userId: payload.userId,
       _id: payload._id,
     });
-    console.log(exist)
+
+    console.log("Payload:", payload);
+    console.log("Exist:", exist);
+
     if (!exist) {
-      const new_cartData = await new cartModel(payload);
-      await new_cartData.save();
-      res.status(200).json({ msg: "CartData added successfully" ,status:true});
+      delete payload['_id'];
+      // console.log("updated payload ",payload);
+      const updatecartdata = new cartModel(payload);
+
+      // Attempt to save the data
+      try {
+        await updatecartdata.save();
+        console.log("Data saved successfully");
+        res.status(200).json({ msg: "CartData added successfully", status: true });
+      } catch (saveError) {
+        console.error("Error saving data:", saveError);
+        res.status(500).json({ msg: "Error saving data", error: saveError, status: false });
+      }
     } else {
-      res.status(400).json({ msg: "Item Already In The CartList" ,status:false});
+      res.status(400).json({ msg: "Item Already In The CartList", status: false });
     }
   } catch (err) {
-    res.status(400).json({ msg: "Something went wrong", error: err,status:false });
+    console.error("Something went wrong:", err);
+    res.status(500).json({ msg: "Something went wrong", error: err, status: false });
   }
 };
+
 
 const handleRemoveCartData= async (req, res) => {
   try {

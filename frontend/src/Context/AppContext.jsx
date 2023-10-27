@@ -25,7 +25,7 @@ const AppContextProvider = ({ children }) => {
 
 
     try {
-      let res = await axios.post("http://localhost:8000/signup", signupdata);
+      let res = await axios.post("https://organic-dl5w.onrender.com/signup", signupdata);
       return res.data;
     } catch (err) {
       console.log("error", err);
@@ -44,7 +44,7 @@ const AppContextProvider = ({ children }) => {
     // setisAuth(true)
 
     try {
-      let res = await axios.post("http://localhost:8000/login", payload);
+      let res = await axios.post("https://organic-dl5w.onrender.com/login", payload);
       return res.data;
     } catch (err) {
       console.log("error", err);
@@ -54,7 +54,7 @@ const AppContextProvider = ({ children }) => {
   const handleGetAllCartData = async () => {
     try {
       let token = localStorage.getItem("token");
-      let data = await axios.get("http://localhost:8000/getcartdata", {
+      let data = await axios.get("https://organic-dl5w.onrender.com/getcartdata", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -72,7 +72,7 @@ const AppContextProvider = ({ children }) => {
 
     try {
       let token = localStorage.getItem("token");
-      let data = await axios.post("http://localhost:8000/addtocart", payload, {
+      let data = await axios.post("https://organic-dl5w.onrender.com/addtocart", payload, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -91,7 +91,7 @@ const AppContextProvider = ({ children }) => {
   const handleDeleteData = async(id) => {
    try{
     let token = localStorage.getItem("token");
-    let data=await axios.get(`http://localhost:8000/removecartdata/${id}`,{
+    let data=await axios.get(`https://organic-dl5w.onrender.com/removecartdata/${id}`,{
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -115,7 +115,7 @@ const AppContextProvider = ({ children }) => {
   const getProductdata = () => {
     setLoading(true);
     axios
-      .get(`http://localhost:8000/allproducts`)
+      .get(`https://organic-dl5w.onrender.com/allproducts`)
 
       .then((res) => {
         setproductdata(res.data.data);
@@ -183,12 +183,12 @@ const AppContextProvider = ({ children }) => {
     }
     const token = localStorage.getItem("token")
     try{
-      let res = await axios.post("http://localhost:8000/updateQty",payload,{
+      let res = await axios.post("https://organic-dl5w.onrender.com/updateQty",payload,{
         headers:{
           Authorization:`Bearer ${token}`
         }
       })
-      // let res = await fetch("http://localhost:8000/updateQty",{
+      // let res = await fetch("https://organic-dl5w.onrender.com/updateQty",{
       //   method:"GET",
       //   headers:{
       //     Authorization:`Bearer ${token}`
