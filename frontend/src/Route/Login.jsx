@@ -65,20 +65,20 @@ const Login = () => {
       <Box className={style.container}>
         <Heading fontWeight="medium">Login</Heading>
         <Box className={style.email}>
-          <input
+          <Input
             className={style.name}
             name="email"
             type="email"
             placeholder="Email"
             onChange={handleChange}
+            h={"100%"}
           />
         </Box>
         <Box className={style.pass}>
-          {/* <input className={style.name} name="password" type="password" placeholder='Password' onChange={handleChange}/> */}
-
-          <InputGroup size="md">
+          <InputGroup size="md" className={style.input}>
             <Input
               // pr='4.5rem'
+              h={"100%"}
               className={style.name}
               onChange={handleChange}
               name="password"

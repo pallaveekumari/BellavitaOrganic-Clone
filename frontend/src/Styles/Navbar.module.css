@@ -1,132 +1,142 @@
-.loginlogo{
-    height: 24px;
-    width: 24px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-top: 20px;
+.loginlogo {
+  height: 24px;
+  width: 24px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
 }
-.loginlogo:hover{
-    cursor: pointer;
+.loginlogo:hover {
+  cursor: pointer;
 }
-.searchlogo{
-    height: 24px;
-    width: 24px; 
-    border: 0.5px solid black;
-    margin-top: 20px;
-    border-radius: 5px;
+.searchlogo {
+  height: 24px;
+  width: 24px;
+  border: 0.5px solid black;
+  margin-top: 20px;
+  border-radius: 5px;
 }
-.bagbtn{
-    
-        height: 24px;
-        width: 24px; 
-        border: 0.5px solid black;
-        margin-top: 10px;
-        border-radius: 5px;
-    }
-    
-
-.navbox{
-    display: flex;
-    gap: 10px;
-
-}
-.navbox:hover{
-    cursor: pointer;
-}
-.bath{
-    font-size: 25px;
-    border-bottom: 1px solid #475D4B;
-}
-.menu{
-    background-color: #e4efda;
-    
-}
-.img{
-    height: 150px;
-    width: 150px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    /* margin-left: 30px; */
-}
-.cimg{
-    height: 150px;
-    width: 200px;
-}
-.mainbox{
-    display: flex;
-    gap: 10px;
-}
-.cbox{
-    height: 100%;
-    width: 100%;
-}
-.cprice{
-height: 50px;
-/* width: 250px; */
-/* border: 1px solid red; */
-display: flex;
-gap: 30px;
-color: #475D4B;
-/* justify-content: space-between; */
-
-}
-.container{
-   
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-margin-bottom: 20px;
-padding: 1rem;
-border-radius: 10px;
-}
-.cbutton{
-    display: flex;
+.bagbtn {
+  height: 24px;
+  width: 24px;
+  border: 0.5px solid black;
+  margin-top: 10px;
+  border-radius: 5px;
 }
 
-.pricetext{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    border-radius: 20px;
-    height: auto;
-    /* width: 9rem; */
-    padding: 0.5rem 0.5rem;
-    color: #475D4B;
-    font-weight: bold;
+.navbox {
+  display: flex;
+  gap: 10px;
 }
-.del{
-    margin-left: 20px;
+.navbox:hover {
+  cursor: pointer;
 }
-.hamburger{
-    display: none;
+.bath {
+  font-size: 25px;
+  border-bottom: 1px solid #475d4b;
 }
-.build:hover{
-cursor: pointer;
-border-bottom: 1.5px solid #475D4B;
+.menu {
+  background-color: #e4efda;
 }
-.body:hover{
-    border-bottom: 1.5px solid #475D4B;
+.img {
+  height: 150px;
+  width: 150px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  /* margin-left: 30px; */
 }
-.navicon:hover{
-    cursor: pointer;
+.cimg {
+  height: 150px;
+  width: 200px;
 }
-.sinput{
-     font-style: "Segoe UI";
-      width: 300px;
-       height: 40px;
-       border: 1px solid #4444;
-        border-radius: 10px;
-        margin-top: 15px;
-         padding: 0.5rem 1rem;
-         
+.mainbox {
+  display: flex;
+  gap: 10px;
+}
+.cbox {
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
 }
 
+.heading {
+  font-size: 20px;
+}
+
+.modalContainer {
+  /* border: 1px solid red; */
+  height: 70%;
+  width: 80%;
+  overflow-y: auto;
+  padding: 1rem;
+}
+.cprice {
+  height: 50px;
+  /* width: 250px; */
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 30px;
+  color: #475d4b;
+  /* justify-content: space-between; */
+}
+.container {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin-bottom: 20px;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 500px;
+}
+.cbutton {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pricetext {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 20px;
+  height: auto;
+  /* width: 9rem; */
+  padding: 0.5rem 0.5rem;
+  color: #475d4b;
+  font-weight: bold;
+}
+.del {
+  margin-left: 20px;
+}
+.hamburger {
+  display: none;
+}
+.build:hover {
+  cursor: pointer;
+  border-bottom: 1.5px solid #475d4b;
+}
+.body:hover {
+  border-bottom: 1.5px solid #475d4b;
+}
+.navicon:hover {
+  cursor: pointer;
+}
+.sinput {
+  font-style: "Segoe UI";
+  width: 300px;
+  height: 40px;
+  border: 1px solid #4444;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 0.5rem 1rem;
+}
 
 @media all and (max-width: 700px) {
-    .navbox {
-        display: none; /* Hide the navigation box on small screens */
-    }
+  .navbox {
+    display: none; /* Hide the navigation box on small screens */
+  }
 
-    .hamburger {
-        display: block; /* Display a hamburger menu icon for small screens */
-    }
+  .hamburger {
+    display: block; /* Display a hamburger menu icon for small screens */
+  }
 
-    .sinput {
-        width: 100%; /* Adjust the input width to fit the screen width */
-    }
+  .sinput {
+    width: 100%; /* Adjust the input width to fit the screen width */
+  }
 }

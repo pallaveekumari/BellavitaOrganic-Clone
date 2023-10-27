@@ -23,16 +23,16 @@ import { AppContext } from "../Context/AppContext";
 const Navbar = () => {
   const OverlayOne = () => (
     <ModalOverlay
-      bg="blackAlpha.300"
-      backdropFilter="blur(10px) hue-rotate(90deg)"
+    // bg="blackAlpha.300"
+    // backdropFilter="blur(10px) hue-rotate(90deg)"
     />
   );
   const OverlayTwo = () => (
     <ModalOverlay
-      bg="none"
-      backdropFilter="auto"
-      backdropInvert="80%"
-      backdropBlur="2px"
+    // bg="none"
+    // backdropFilter="auto"
+    // backdropInvert="80%"
+    // backdropBlur="2px"
     />
   );
 
@@ -49,13 +49,13 @@ const Navbar = () => {
     handleqty,
     handleTotal,
     total,
-    getProductdata
+    getProductdata,
   } = useContext(AppContext);
 
   useEffect(() => {
     handleGetAllCartData();
     handleTotal();
-  }, []);
+  }, [cartdata]);
 
   return (
     <div>
@@ -137,12 +137,11 @@ const Navbar = () => {
             <input
               className={style.sinput}
               value={text}
-              onChange={async (e) =>{
-                 setText(e.target.value);
-                 if(e.target.value=="" || e.target.value==undefined){
-                 await getProductdata()
-                 }
-              
+              onChange={async (e) => {
+                setText(e.target.value);
+                if (e.target.value == "" || e.target.value == undefined) {
+                  await getProductdata();
+                }
               }}
               type="text"
               placeholder="Search for Products"
@@ -178,15 +177,15 @@ const Navbar = () => {
                 } <i className="fa-solid fa-bag-shopping"></i>{" "}
               </Box>
             </Button>
-            <Modal  isCentered isOpen={isOpen} onClose={onClose}>
+            <Modal size={"xl"} isCentered isOpen={isOpen} onClose={onClose}>
               {overlay}
-              <ModalContent>
+              <ModalContent className={style.modalContainer}>
                 <Button>
                   <Link to="/product">
-                    <button>Continue Shopping</button>
+                    <button className={style.heading}>Continue Shopping</button>
                   </Link>
                 </Button>
-                <ModalHeader>Your Cart</ModalHeader>
+                <ModalHeader textAlign={"center"}>Your Cart</ModalHeader>
 
                 {/* <ModalCloseButton /> */}
                 <ModalBody>
@@ -207,9 +206,13 @@ const Navbar = () => {
                             <Text>{el.title}</Text>
                           </Box>
                           <Box className={style.cprice}>
-                            <Text className={style.pricetext}>RS: {el.price * el.qty}</Text>
+                            <Text className={style.pricetext}>
+                              RS: {el.price * el.qty}
+                            </Text>
 
-                            <Text className={style.pricetext} as="s">{el.strikeprice}</Text>
+                            <Text className={style.pricetext} as="s">
+                              {el.strikeprice}
+                            </Text>
 
                             <Box className={style.cbutton}>
                               <Button
@@ -267,7 +270,7 @@ const Navbar = () => {
                   )}
                 </ModalBody>
                 <ModalFooter>
-                  <Box  >Total:{total}</Box>
+                  <Box>Total:{total}</Box>
                   <Button>CHECKOUT</Button>
                 </ModalFooter>
               </ModalContent>

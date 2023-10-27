@@ -1,83 +1,75 @@
-.fname{
-    height: 50px;
-    width: 450px;
-    border: 1px solid #475D4B;
-    margin: auto;
-    margin-top: 40px;
-    color: #475D4B;
+.fname {
+  height: 50px;
+  width: 450px;
+  border: 1px solid #475d4b;
+  margin: auto;
+  margin-top: 40px;
+  color: #475d4b;
+  padding: 0;
 }
-.fname:hover{
-   
-    border: 2px solid #475D4B;
+/* .fname:hover {
+    border: 2px solid #475d4b;
+    } */
+.lname {
+  height: 50px;
+  width: 450px;
+  border: 1px solid #475d4b;
+  margin: auto;
+  margin-top: 20px;
+  color: #475d4b;
 }
-.lname{
-    height: 50px;
-    width: 450px;
-    border: 1px solid #475D4B;
-    margin: auto;
-    margin-top: 20px;
-    color: #475D4B;
+/* .lname:hover {
+    border: 2px solid #475d4b;
+    } */
+.name {
+  /* height: 100%; */
+  width: 70%;
+  margin: auto;
+  margin-bottom: 1rem;
 }
-.lname:hover{
-   
-    border: 2px solid #475D4B;
+.signbtn {
+  height: 45px;
+  width: 250px;
+  margin-top: 50px;
+  border-radius: 10px;
+  background-color: #475d4b;
+  color: white;
 }
-.name{
-    height: 100%;
-    width: 100%;
-   
+.logos {
+  height: 135px;
+  width: 450px;
+  margin: auto;
+  display: none;
+  gap: 10px;
 }
-.signbtn{
-    height: 45px;
-    width: 250px;
-    
-    margin-top: 50px;
-    border-radius: 10px;
-    background-color:#475D4B;
-    color: white; 
-    
+.logobox {
+  height: 135px;
+  width: 150px;
 }
-.logos{
-    height: 135px;
-    width: 450px;
-    margin: auto;
-    
-    display: none;
-    gap: 10px;
+.logoimg {
+  height: 100%;
+  width: 100%;
+  border-bottom: 2px solid #475d4b;
 }
-.logobox{
-    height: 135px;
-    width: 150px;
-    
-    
+.container {
+  height: 400px;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: auto;
+  margin-top: 2rem;
+  border-radius: 15px;
 }
-.logoimg{
-    height: 100%;
-    width: 100%;
-    border-bottom: 2px solid #475D4B ;
-}
-.container{
-    height: 400px;
-    width: 50%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: auto;
-    margin-top: 2rem;
-    border-radius: 15px;
-}
-
 /* Media query for small screens (max-width: 768px, you can adjust the value) */
 @media all and (max-width: 768px) {
-    .fname,
-    .lname {
-        width: 100%; /* Make the input fields take up the full width on small screens */
-        margin: 10px auto; /* Add spacing around the input fields */
-    }
-
-    .logos {
-        display: none; /* Hide the logos on small screens */
-    }
-
-    .signbtn {
-        width: 100%; /* Make the button take up the full width on small screens */
-    }
+  .fname,
+  .lname {
+    width: 100%; /* Make the input fields take up the full width on small screens */
+    margin: 10px auto; /* Add spacing around the input fields */
+  }
+  .logos {
+    display: none; /* Hide the logos on small screens */
+  }
+  .signbtn {
+    width: 100%; /* Make the button take up the full width on small screens */
+  }
 }
