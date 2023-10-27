@@ -14,7 +14,7 @@ const addCartData = async (req, res) => {
     const payload = req.body;
     const exist = await cartModel.findOne({
       userId: payload.userId,
-      _id: payload._id,
+      title: payload.title,
     });
 
     console.log("Payload:", payload);
