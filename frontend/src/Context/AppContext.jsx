@@ -13,9 +13,11 @@ const AppContextProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
   const handleTotal = () => {
+    // console.log(cartdata)
     let totalprice = cartdata.reduce((sum, el) => {
-      return sum + el.price * el.qty;
+      return sum + (el.price * el.qty);
     }, 0);
+    // console.log(totalprice)
     setTotal(totalprice);
   };
 
@@ -103,9 +105,11 @@ const AppContextProvider = ({ children }) => {
   };
 
   const handlesearch = (query) => {
-    axios
-      .get(`https://bellavita-organic.herokuapp.com/productpage?q=${query}`)
-      .then((res) => setproductdata(res.data));
+    let updatedData = productdata.filter((el,i)=>{
+      return el['title'].toLowerCase().includes(query.toLowerCase());
+    })
+    console.log('searched data is ',updatedData)
+    setproductdata(updatedData);
   };
 
   const getProductdata = () => {
@@ -179,22 +183,22 @@ const AppContextProvider = ({ children }) => {
     }
     const token = localStorage.getItem("token")
     try{
-      // let res = await axios.get("http://localhost:8000/updateQty",payload,{
-      //   headers:{
-      //     Authorization:`Bearer ${token}`
-      //   }
-      // })
-      let res = await fetch("http://localhost:8000/updateQty",{
-        method:"GET",
+      let res = await axios.post("http://localhost:8000/updateQty",payload,{
         headers:{
           Authorization:`Bearer ${token}`
-        },
-        body:JSON.stringify(payload)
+        }
       })
-      let data = await res.json();
-      console.log("res is ",data);
+      // let res = await fetch("http://localhost:8000/updateQty",{
+      //   method:"GET",
+      //   headers:{
+      //     Authorization:`Bearer ${token}`
+      //   },
+      //   body:JSON.stringify(payload)
+      // })
+      // let data = await res.json();
+      console.log("res is ",res);
       
-      return data;
+      return res.data;
     }
       catch(err){
         console.log('error ',err)
@@ -224,7 +228,6 @@ const AppContextProvider = ({ children }) => {
         total,
         handlesort,
         handlesorttitle,
-        handleqty,
         loading,
         handleGetAllCartData
       }}

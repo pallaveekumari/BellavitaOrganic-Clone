@@ -11,7 +11,7 @@ AllRoutes.get("/allproducts",getAllProducts)
 AllRoutes.get("/getcartdata",authorisation,getCartData)
 AllRoutes.post("/addtocart",authorisation,addCartData)
 AllRoutes.get("/removecartdata/:id",authorisation,handleRemoveCartData)
-AllRoutes.get("/updateQty",authorisation,handleUpdateQuantity)
+AllRoutes.post("/updateQty",authorisation,handleUpdateQuantity)
 
 module.exports={
     AllRoutes
