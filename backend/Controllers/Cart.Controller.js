@@ -1,5 +1,4 @@
 const { cartModel } = require("../Models/Cart.model");
-
 const getCartData = async (req, res) => {
   try {
     const { userId } = await req.body;
@@ -43,8 +42,6 @@ const addCartData = async (req, res) => {
     res.status(500).json({ msg: "Something went wrong", error: err, status: false });
   }
 };
-
-
 const handleRemoveCartData= async (req, res) => {
   try {
     const { id } = req.params;
@@ -55,8 +52,6 @@ const handleRemoveCartData= async (req, res) => {
     res.status(400).json({ msg: "Something went wrong", error: err,status:false });
   }
 };
-
-
 const handleUpdateQuantity=async(req,res)=>{
   try{
   const {id,type,userId}=req.body;
